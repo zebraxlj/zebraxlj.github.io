@@ -1,0 +1,17 @@
+*{margin:0;padding:0}
+html{height: 100%;}
+body{font-size:15px;font-family:"微软雅黑";color:#333333;background:url('../img/scandal.jpg');background-repeat:no-repeat;background-size:contain;background-position:center;position:relative;padding:2%;margin:0;height:90%;}
+.notbold {font-weight:normal;}
+.content{background:rgba(255,255,255,0.8);border:1px solid black;border-radius:5px;padding: 10px;padding-left:20px;padding-right:20px;min-height:99%;max-height:99%;min-width:95%;max-width:95%;overflow:auto;}
+
+.clear{clear:both;}
+hr {clear:both;margin-bottom:2%;border:0;border-top:1px solid silver;}
+
+.prettyprint {white-space:pre-wrap;}
+pre {-moz-tab-size:0; /* Firefox 4+ */-o-tab-size:0; /* Opera 11.5 & 12.1 only */tab-size:0; /* Chrome 21+, Safari 6.1+, Opera 15+ */}
+
+.box_model_margin{display:inline-block;}
+
+.level_1_table{border:1px solid grey;border-collapse:collapse; margin-left:20px;}
+.level_1_table tr,td{border:1px solid grey;padding:3px 10px;}
+.level_1_table thead{font-weight:bold;font-color:grey;background:rgba(165, 165, 165, 0.5)}

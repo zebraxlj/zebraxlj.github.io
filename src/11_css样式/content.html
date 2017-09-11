@@ -1,0 +1,118 @@
+<!DOCTYPE html> <!-- w3 规范 -->
+<html>
+	<head>
+		<!-- 编码及：中文编码（GBK/GB2312），国际编码（utf-8） -->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">  <!-- meta 是单标签; charset 根据服务器决定 -->
+		<!-- 声明当前页面三要素 -->
+		<title>HTML 的国际化标准模板</title>  <!-- <= 31 字 -->
+		<meta name="Keywords" content="keyword,keyword,keyword"> <!-- 搜索引擎的搜索关键词 -->
+		<meta name="Description" content=""> <!-- <= 80 字 搜索引擎显示的预览文字 -->
+		
+		<!-- css/js -->
+		<style type="text/css">
+			*{margin:0;padding:0}
+			body{font-size:15px;font-family:"微软雅黑";color:#333333;}
+			@font-face {font-family:AveFedan; src:url('../../font/AveFedan.ttf');}
+			.notbold {font-weight:normal;}
+			/*body{background:red;}*/
+			html{height: 100%;}
+			body{background:url('../../img/scandal.jpg');background-repeat:no-repeat;background-size:contain;background-position:center;position:relative;padding:2%;margin:0;height:90%;}
+			.content{background:rgba(255,255,255,0.8);border:1px solid black;border-radius:5px;padding: 10px;padding-left:20px;padding-right:20px;min-height:99%;max-height:99%;min-width:95%;max-width:95%;overflow:auto;}
+			
+			hr {clear:both;margin-bottom:2%;border:0;border-top:1px solid silver;}
+			
+			.prettyprint {white-space: pre-wrap;}
+			pre {-moz-tab-size:0; /* Firefox 4+ */-o-tab-size:0; /* Opera 11.5 & 12.1 only */tab-size:0; /* Chrome 21+, Safari 6.1+, Opera 15+ */}
+		</style>
+
+		<script>
+			var p = document.querySelector(".prettyprint");
+			p.textContent = p.textContent.replace(/^\t*/mg, "");
+		</script>
+	</head>
+	<body>
+		<div class="content">
+		
+			<pre class="prettyprint">
+				<strong>background背景属性</strong>
+				
+				  background 是简写属性，在一个声明中设置所有的背景属性；
+				    <1> background-color: 规定要使用的背景颜色;
+				    <2> background-position: 规定背景图像的位置;
+				    <3> background-size:规定背景图片的尺寸;
+				    <4> background-repeat:规定如何重复背景图像;
+				    <5> background-image:把图像设置为背景;
+			</pre>
+			<hr color="grey">
+			<pre class="prettyprint">
+				<strong>background-repeat:规定如何重复背景图像</strong>
+				<table border="1px solid grey">
+					<tr>
+						<td>repeat</td>
+						<td>默认。背景图像将在垂直方向和水平方向重复。</td>
+					</tr>
+						<td>repeat-x</td>
+						<td>背景图像将在水平方向重复。</td>
+					<tr>
+					</tr>
+					<tr>
+						<td>repeat-y</td>
+						<td>背景图像将在垂直方向重复。</td>
+					</tr>
+					<tr>
+						<td>no-repeat</td>
+						<td>背景图像将仅显示一次。</td>
+					</tr>
+				</table>
+			</pre>
+			<hr color="grey">
+			<pre class="prettyprint">
+				<strong>background-position: 规定背景图像的位置</strong>
+				  body{ 
+                  
+				    background-image:url('1.gif');
+				    background-repeat:no-repeat;
+                    
+				    /*需要把 background-attachment属性设置为"fixed"才能保证该属性在 
+				    Firefox和Opera 中正常工作。*/
+				    background-attachment:fixed;
+				    
+				    background-position:center;
+				  }
+				
+				<table border="1px solid grey">
+					<tr>
+						<td>值</td>
+						<td>描述</td>
+					</tr>
+						<td>top left
+							top center
+							top right
+							center left
+							center center
+							center right
+							bottom left
+							bottom center
+							bottom right</td>
+						<td>如果您仅规定了一个关键词，那么第二个值将是"center"
+							默认值：0% 0%</td>
+					<tr>
+						<td>x% y%</td>
+						<td>第一个值是水平位置，第二个值是垂直位置
+							左上角是0% 0%。右下角是100% 100%</td>
+					</tr>
+					<tr>
+						<td>x_pos y_pos</td>
+						<td>第一个值是水平位置，第二个值是垂直位置
+							左上角是 0 0。单位是像素或其他的CSS单位
+							若仅规定一个值，则另一值为50%
+							可以混合使用 % 和 pos 值</td>
+					</tr>
+				</table>
+			</pre>
+		</div>
+		
+
+
+	</body>
+</html>

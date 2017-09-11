@@ -1,0 +1,109 @@
+<!DOCTYPE html> <!-- w3 规范 -->
+<html>
+	<head>
+		<!-- 编码及：中文编码（GBK/GB2312），国际编码（utf-8） -->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">  <!-- meta 是单标签; charset 根据服务器决定 -->
+		<!-- 声明当前页面三要素 -->
+		<title>HTML 的国际化标准模板</title>  <!-- <= 31 字 -->
+		<meta name="Keywords" content="keyword,keyword,keyword"> <!-- 搜索引擎的搜索关键词 -->
+		<meta name="Description" content=""> <!-- <= 80 字 搜索引擎显示的预览文字 -->
+		
+		<!-- css/js -->
+		<style type="text/css">
+			*{margin:0;padding:0}
+			body{font-size:15px;font-family:"微软雅黑";color:#333333;}
+			@font-face {font-family:AveFedan; src:url('../../font/AveFedan.ttf');}
+			.notbold {font-weight:normal;}
+			/*body{background:red;}*/
+			html{height: 100%;}
+			body{background:url('../../img/scandal.jpg');background-repeat:no-repeat;background-size:contain;background-position:center;position:relative;padding:2%;margin:0;height:90%;}
+			.content{background:rgba(255,255,255,0.8);border:1px solid black;border-radius:5px;padding: 10px;padding-left:20px;padding-right:20px;min-height:99%;max-height:99%;min-width:95%;max-width:95%;overflow:auto;}
+			
+			hr {clear:both; padding:.1px; margin-bottom:2%;}
+			
+			.prettyprint {white-space: pre-wrap;}
+			pre {-moz-tab-size:0; /* Firefox 4+ */-o-tab-size:0; /* Opera 11.5 & 12.1 only */tab-size:0; /* Chrome 21+, Safari 6.1+, Opera 15+ */}
+		</style>
+		<script>
+			var p = document.querySelector(".prettyprint");
+			p.textContent = p.textContent.replace(/^\t*/mg, "");
+		</script>
+	</head>
+	<body>
+		<div class="content">
+		
+			<pre class="prettyprint">
+			<strong>HTML标签 - 无序列表：</strong>
+
+			  无序列表是一个项目的列表，此列项目使用粗体圆点（典型的小黑圆圈）进行标记。
+              
+			  无序列表始于 &lt;ul&gt; 标签；
+              
+			  每个列表项始于 &lt;li&gt; （列表项内部可以使用段落、换行符、图片、链接以及其他列表等）。
+
+			<strong>具体事例：</strong>
+
+			  &lt;ul&gt;
+			  	  &lt;li&gt;列表项1&lt;/li&gt;
+			  	  &lt;li&gt;列表项2&lt;/li&gt;
+			  &lt;/ul&gt;
+			</pre>
+			
+			<hr color="grey">
+
+			<pre class="prettyprint">
+				<strong>HTML标签 - 有序列表：</strong>
+
+				  和无序列表一样，有序列表是一列项目，列表项目使用数字进行标记。
+                  
+				  有序列表始于 &lt;ol&gt; 标签；
+                  
+				  每个列表项始于 &lt;li&gt; 标签（列表项内部可以使用段落、换行符、图片、链接以及其他列表等）。
+                  
+				  &lt;ol&gt;
+				  	  &lt;li&gt;有序列表项1&lt;/li&gt;
+				  	  &lt;li&gt;有序列表项2&lt;/li&gt;
+				  &lt;/ol&gt;
+			</pre>
+
+			<hr color="grey">
+
+			<pre class="prettyprint">
+				<strong>HTML标签 - 定义列表：</strong>
+
+				  自定义列表不仅仅是一列项目，而是项目及其注释的组合。
+                  
+				  自定义列表以 &lt;dl&gt; 标签开始；
+                  
+				  每个自定义列表项以 &lt;dt&gt; 开始；
+                  
+				  每个自定义列表项的定义以 &lt;dd&gt; 开始。
+                  
+				  （定义列表的列表项内部可以使用段落、换行符、图片、链接以及其他列表等）
+                  
+				  &lt;dl&gt;
+				  	  &lt;dt&gt;自定列表项1&lt;/dt&gt;
+				  	  &lt;dd&gt;列表项的定义1&lt;/dd&gt;
+				  	  &lt;dt&gt;自定列表项2&lt;/dt&gt;
+				  	  &lt;dd&gt;列表项的定义2&lt;/dd&gt;
+				  &lt;/dl&gt;
+			</pre>
+
+			<hr color="grey">
+
+			<pre class="prettyprint">
+			<strong>HTML标签 - 列表标签的应用</strong>
+			  &lt;1&gt; 不同类型的无序列表： type=“disc/circle/square”项目符号列表 ;
+			  &lt;2&gt; 不同类型的有序列表： type=“默认数字/大写字母A/小写字母a/大写罗马字母I/小写罗马字母i” 列表 ;
+			  &lt;3&gt; 嵌套列表： ul li(中嵌套ul li) ;
+			  &lt;4&gt; 2级嵌套列表： ul li(中嵌套ul li&lt;中嵌套ul li&gt;) ;
+			  &lt;5&gt; 定义列表；
+			</pre>
+
+
+		</div>
+		
+
+
+	</body>
+</html>

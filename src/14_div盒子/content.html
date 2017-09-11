@@ -1,0 +1,262 @@
+<!DOCTYPE html> <!-- w3 规范 -->
+<html>
+	<head>
+		<!-- 编码及：中文编码（GBK/GB2312），国际编码（utf-8） -->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">  <!-- meta 是单标签; charset 根据服务器决定 -->
+		<!-- 声明当前页面三要素 -->
+		<title>HTML 的国际化标准模板</title>  <!-- <= 31 字 -->
+		<meta name="Keywords" content="keyword,keyword,keyword"> <!-- 搜索引擎的搜索关键词 -->
+		<meta name="Description" content=""> <!-- <= 80 字 搜索引擎显示的预览文字 -->
+		
+		<!-- css/js -->
+		<style type="text/css">
+			*{margin:0;padding:0}
+			body{font-size:15px;font-family:"微软雅黑";color:#333333;}
+			.notbold {font-weight:normal;}
+			html{height: 100%;}
+			body{background:url('../../img/scandal.jpg');background-repeat:no-repeat;background-size:contain;background-position:center;position:relative;padding:2%;margin:0;height:90%;}
+			.content{background:rgba(255,255,255,0.8);border:1px solid black;border-radius:5px;padding: 10px;padding-left:20px;padding-right:20px;min-height:99%;max-height:99%;min-width:95%;max-width:95%;overflow:auto;}
+			
+			hr {clear:both;margin-bottom:2%;border:0;border-top:1px solid silver;}
+			
+			.prettyprint {white-space: pre-wrap;}
+			pre {-moz-tab-size:0; /* Firefox 4+ */-o-tab-size:0; /* Opera 11.5 & 12.1 only */tab-size:0; /* Chrome 21+, Safari 6.1+, Opera 15+ */}
+
+			.box_model_margin{display:inline-block}
+
+			.level_1_table{border:1px solid grey;border-collapse:collapse; margin-left:20px;}
+			.level_1_table tr,td{border:1px solid grey;padding:3px 10px;}
+			.level_1_table thead{font-weight:bold;font-color:grey;background:rgba(165, 165, 165, 0.5)}
+		</style>
+
+		<script>
+			var p = document.querySelector(".prettyprint");
+			p.textContent = p.textContent.replace(/^\t*/mg, "");
+		</script>
+	</head>
+	<body>
+		<div class="content">
+		
+			<pre class="prettyprint">
+				<strong>CSS 框模型 (Box Model) 规定了元素框处理元素内容、内边距、边框 和 外边距 的方式</strong>
+				
+				  元素框的最内部分是实际的内容，直接包围内容的是内边距。内边距呈现了元素的背景
+
+				  内边距的边缘是边框。边框以外是外边距，外边距默认是透明的，因此不会遮挡其后的任何元素。
+
+				<div class="box_model_margin" style="border:1px dashed black;margin:0 30px;padding:0 30px">
+					margin
+					<div style="border:1px solid black;padding:inherit;">
+						border
+						<div style="border:1px dashed black;padding:inherit;">
+							padding
+							<div style="border:1px dotted gray;padding:inherit;">
+								content - width x height
+							</div>
+						</div>
+					</div>
+				</div>
+			</pre>
+			<hr color="grey">
+			<pre class="prettyprint">
+				<strong>内边距、边框和外边距</strong>
+				
+				概述：
+
+				  1. 内边距、边框和外边距都是可选的，默认值是零；
+                  
+				  2. margin 和 padding 设置为零来覆盖所有浏览器样式，<b>解决浏览器兼容性</b> ;
+                  
+				     * { margin: 0; padding: 0; }
+                  
+				  3. 在 CSS 中，width 和 height 指的是内容区域的宽度和高度 ;
+                  
+				  4. 增加内边距、边框和外边距不会影响内容区域的尺寸，但是会增加元素框的总尺寸 ;
+                  
+				     .box {
+				       width: 70px;
+				       margin: 10px;
+				       padding: 5px 5px;
+				     }
+                  
+				  5. padding : 内边距，也有称为填充
+                  
+				  6. border : 边框 ; 
+                  
+				  7. margin : 外边距，也有称为空白或空白边 ;
+			</pre>
+			<hr color="grey">
+			<pre class="prettyprint">
+				<strong>CSS padding 属性</strong>
+
+				  1. CCSS padding 属性定义元素的内边距（边框和内容区之间）;
+                  
+				  2. padding 属性接受长度值或百分比值，但不允许使用负值。
+                  
+				  单边内边距属性（分别设置上、右、下、左内边距）<例：h,p,div标签>
+					<table class="level_1_table">
+						<thead>
+							<tr>
+								<td>值</td>
+								<td>描述</td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>padding</td>
+								<td>简写属性，作用是在一个声明中设置元素的内边距</td>
+							</tr>
+							<tr>
+								<td>paddint-top</td>
+								<td>设置元素的上内边距</td>
+							</tr>
+							<tr>
+								<td>padding-right</td>
+								<td>设置元素的右内边距</td>
+							</tr>
+							<tr>
+								<td>padding-bottom</td>
+								<td>设置元素的下内边距</td>
+							</tr>
+							<tr>
+								<td>padding-left</td>
+								<td>设置元素的左内边距</td>
+							</tr>
+						</tbody>
+					</table>
+			</pre>
+			<hr color="grey">
+			<pre class="prettyprint">
+				<strong>CSS 外边距  margin</strong>
+				
+				  1. CSS margin 围绕在元素边框的空白区域是外边距。设置外边距会在元素外创建额外的“空白”;
+
+				  2. margin 属性<u>接受任何长度单位、百分数值甚至负值</u>。
+				  
+					<table class="level_1_table">
+						<thead>
+							<tr>
+								<td>属性</td>
+								<td>描述</td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>margin</td>
+								<td>简写属性，在一个声明中设置所有外边距属性。<br />顺序：<br /> margin:所有;<br /> margin: 上下 左右;<br /> margin:上 右 下 左(顺时针)</td>
+							</tr>
+							<tr>
+								<td>margin-top</td>
+								<td>上外边距</td>
+							</tr>
+							<tr>
+								<td>margin-right</td>
+								<td>右外边距</td>
+							</tr>
+							<tr>
+								<td>margin-bottom</td>
+								<td>下外边距</td>
+							</tr>
+							<tr>
+								<td>margin-left</td>
+								<td>左外边距</td>
+							</tr>
+						</tbody>
+					</table>
+			</pre>
+			<hr color="grey">
+			<pre class="prettyprint">
+				<strong>CSS 边框</strong>
+				
+				  三方面： 宽度、样式，以及颜色
+                  
+				    border
+				    border-top
+				    border-right
+				    border-bottom
+				    border-left
+				    border-style
+				    border-width
+				    border-color
+                    
+				    Ex: border: 1px solid red;
+					<table class="level_1_table" style="border-collapse:separate;">
+						<thead>
+							<tr>
+								<td>值</td>
+								<td>描述</td>
+								<td>预览</td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>none</td>
+								<td>定义无边框</td>
+								<td style="border:none;">border:none;</td>
+							</tr>
+							<tr>
+								<td>hidden</td>
+								<td>与"none"相同，不过应用于表时除外。对于表，hidden用于解决边框冲突</td>
+								<td style="border:hidden;">border:hidden;</td>
+							</tr>
+							<tr>
+								<td>dotted</td>
+								<td>定义点状边框。在大多数浏览器中呈现为实线</td>
+								<td style="border:6px dotted grey;">border:6px dotted grey;</td>
+							</tr>
+							<tr>
+								<td>dashed</td>
+								<td>定义虚线。在大多数浏览器中呈现为实线。</td>
+								<td style="border:6px dashed grey;">border:6px dashed grey;</td>
+							</tr>
+							<tr>
+								<td>solid</td>
+								<td>定义实线。</td>
+								<td style="border:6px solid grey">border:6px solid grey</td>
+							</tr>
+							<tr>
+								<td>double</td>
+								<td>定义双实线</td>
+								<td style="border:6px double grey;">border:6px double grey;</td>
+							</tr>
+							<tr>
+								<td>groove</td>
+								<td>定义3D凹槽边框。其效果取决于border-color的值。</td>
+								<td style="border:6px groove aquamarine;">border:6px groove aquamarine;</td>
+							</tr>
+							<tr>
+								<td>ridge</td>
+								<td>定义3D隆起边框。其效果取决于border-color的值。</td>
+								<td style="border:6px ridge bisque;">border:6px ridge bisque;</td>
+							</tr>
+							<tr>
+								<td>inset</td>
+								<td>定义3Dinset边框。其效果取决于border-color的值。</td>
+								<td style="border:6px inset coral">border:6px inset coral</td>
+							</tr>
+							<tr>
+								<td>outset</td>
+								<td>定义3Doutset边框。其效果取决于border-color的值。</td>
+								<td style="border:6px outset darkseagreen">border:6px outset darkseagreen</td>
+							</tr>
+						</tbody>
+					</table>
+			</pre>
+			<hr color="grey">
+			<pre class="prettyprint">
+				<strong>外边距合并</strong>
+
+				  当两个垂直外边距相遇时，它们将形成一个外边距。
+
+				  合并后的外边距的高度等于两个发生合并的外边距的高度中的较大者
+					
+				  EX. 以下两个div间的间距为30px，不是60px(30px+30px)
+			</pre>
+			<div style="background:rgba(0,120,220,.5);margin-left:100px;margin-bottom:30px;width:300px;height:30px;">margin-bottom:30px; height:30px;</div>
+			<div style="background:rgba(200,80,80,.5);margin-left:100px;margin-top:30px;width:300px;height:60px;">margin-top:30px; height:60px;</div>
+		</div>
+		
+
+
+	</body>
+</html>

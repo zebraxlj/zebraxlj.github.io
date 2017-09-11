@@ -1,0 +1,54 @@
+<!DOCTYPE html> <!-- w3 规范 -->
+<html>
+	<head>
+		<!-- 编码及：中文编码（GBK/GB2312），国际编码（utf-8） -->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">  <!-- meta 是单标签; charset 根据服务器决定 -->
+		<!-- 声明当前页面三要素 -->
+		<title>HTML 的国际化标准模板</title>  <!-- <= 31 字 -->
+		<meta name="Keywords" content="keyword,keyword,keyword"> <!-- 搜索引擎的搜索关键词 -->
+		<meta name="Description" content=""> <!-- <= 80 字 搜索引擎显示的预览文字 -->
+		
+		<!-- css/js -->
+		<style type="text/css">
+			@font-face {font-family:AveFedan; src:url('../font/AveFedan.ttf');}
+			:root{
+				--my_red:#e20001;
+				--my_orange:#f1ab0d;
+				--my_green:#61ff16;
+				--my_blue:#0977e8;
+				--my_purple:#7b01ea;
+			}
+			.notbold {font-weight:normal;}
+			/*body{background:red;}*/
+			html{height: 100%;}
+			body{
+				background:url('../img/scandal.jpg');
+				background-repeat:no-repeat;
+				background-size:contain;
+				background-position:center;
+				position:relative;
+				padding:0;
+				margin:0;
+			}
+			.band_name{
+				font-family:AveFedan;
+				font-size:7vh;
+				color:rgba(255,120,140,.75);
+				white-space:nowrap;
+				text-overflow:hidden;
+				
+				position:absolute;
+				/*left:35vw;*/
+				left:30%;
+				top:70vh;
+				/* Rotate div */
+				-ms-transform: rotate(345deg); /* IE 9 */
+				-webkit-transform: rotate(345deg); /* Chrome, Safari, Opera */
+				transform: rotate(345deg);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="band_name">SCANDAL9 &nbsp;&nbsp; Shoujo-S</div>
+	</body>
+</html>

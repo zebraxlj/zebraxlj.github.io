@@ -1,0 +1,128 @@
+<!DOCTYPE html> <!-- w3 规范 -->
+<html>
+	<head>
+		<!-- 编码及：中文编码（GBK/GB2312），国际编码（utf-8） -->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">  <!-- meta 是单标签; charset 根据服务器决定 -->
+		<!-- 声明当前页面三要素 -->
+		<title>HTML 的国际化标准模板</title>  <!-- <= 31 字 -->
+		<meta name="Keywords" content="keyword,keyword,keyword"> <!-- 搜索引擎的搜索关键词 -->
+		<meta name="Description" content=""> <!-- <= 80 字 搜索引擎显示的预览文字 -->
+		
+		<!-- css/js -->
+		<style type="text/css">
+			@import url("../../css/right_frame.css");
+		</style>
+	</head>
+	<body>
+		<div class="content">
+			<pre class="prettyprint">
+				<strong>块级元素：block element</strong>
+				
+				  1.  每个块级元素默认占一行高度，一行内添加一个块级元素后无法一般无法添加其他元素（float浮动后除外）;
+                  
+				  2.  两个块级元素连续编辑时，会在页面自动换行显示。块级元素一般可嵌套块级元素或行内元素 ;
+                  
+				  常见块级元素：
+                  
+				  　<1> div - 常用块级容易，也是css layout的主要标签
+				  　<2> dl - 定义列表   
+				  　<3> h1 - h6 标题标签  
+				  　<4> hr - 水平分隔线   
+				  　<5> menu - 菜单列表   
+				  　<6> ol - 排序表单   
+				  　<7> p - 段落   
+				  　<8> table - 表格   
+				  　<9> ul - 非排序列表
+			</pre>
+			<hr />
+			<pre class="prettyprint">
+				<strong>行内元素：inline element</strong>
+				
+				  1. 也叫内联元素、内嵌元素等；行内元素一般都是基于语义级(semantic)的基本元素，只能容纳文本或其他内联元素，常见内联元素 “a”；
+
+				  常见的行内元素：
+				  　a - 锚点
+				  　b - 粗体(不推荐)   
+				  　br - 换行   
+				  　em - 强调   
+				  　i - 斜体   
+				  　img - 图片   
+				  　input - 输入框   
+				  　label - 表格标签   
+				  　select - 项目选择   
+				  　span - 常用内联容器，定义文本内区块   
+				  　strong - 粗体强调   
+				  　sub - 下标   
+				  　sup - 上标   
+				  　textarea - 多行文本输入框   
+				  　u - 下划线 
+			</pre>
+			<hr />
+			<pre class="prettyprint">
+				<strong>文档流</strong>
+				
+				  1. 将窗体自上而下分成一行行, 并在每行中按从左至右的顺序排放元素,即为文档流 ;
+                  
+				  2. CSS的定位机制有3种：普通流、浮动和定位 ;
+                  
+				  3. 文档流：从上到下，从左到右，一个挨一个的简单或者叫正常布局 ;
+                  
+				  4. 定位：（position）
+				     Static：保持文档流 ;
+				     Relative：相对本身的原始位置发生位移且保持文档流，占空间 ;
+				     Absolute：脱离文档流，不占空间且相对于其包含块来定位 ;
+                  
+				  5. 浮动：（float）脱离文档流，不占空间 ;
+                  
+				  6. 以前总是觉得position：static这个属性很多余，它的作用就是让元素保持文档流的;
+			</pre>
+			<hr />
+			<pre class="prettyprint">
+				<strong>显示：display</strong>
+				
+				  1.  none - 此元素不会被显示 ;
+
+				  2.  block - 显示为块级元素，此元素前后会带有换行符 ;
+                  
+				  3.  inline -  默认 , 此元素会被显示为内联元素，元素前后没有换行符 ;
+			</pre>
+			<hr />
+			<pre class="prettyprint">
+				<strong>CSS overflow属性</strong>
+				
+				  1. overflow 属性规定当内容溢出元素框时发生的事情 ;
+                  
+				  2. 这个属性定义溢出元素内容区的内容会如何处理。如果值为 scroll，不论是否需要用户代理都会提供一种滚动机制 ;
+                  
+				  3. 有可能即使元素框中可以放下所有内容也会出现滚动条 ;
+					
+					<table class="level_1_table">
+						<thead>
+							<tr>
+								<td>值</td>
+								<td>描述</td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>visible</td>
+								<td>默认值。内容不会被修剪，超出元素框内容会呈现在元素框外。</td>
+							</tr>
+							<tr>
+								<td>hidden</td>
+								<td>内容会被修剪，超出元素框内容不可见</td>
+							</tr>
+							<tr>
+								<td>scroll</td>
+								<td>内容会被修剪，浏览器显示滚动条以便查看超出元素框内容</td>
+							</tr>
+							<tr>
+								<td>auto</td>
+								<td>如果内容被修剪，浏览器显示滚动条以便查看超出元素框内容</td>
+							</tr>
+						</tbody>
+					</table>
+			</pre>
+		</div>
+	</body>
+</html>

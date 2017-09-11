@@ -1,0 +1,312 @@
+<!DOCTYPE html> <!-- w3 规范 -->
+<html>
+	<head>
+		<!-- 编码及：中文编码（GBK/GB2312），国际编码（utf-8） -->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">  <!-- meta 是单标签; charset 根据服务器决定 -->
+		<!-- 声明当前页面三要素 -->
+		<title>css样式(下)</title>  <!-- <= 31 字 -->
+		<meta name="Keywords" content="css控制字体,css控制文本,css控制表格样式"> <!-- 搜索引擎的搜索关键词 -->
+		<meta name="Description" content=""> <!-- <= 80 字 搜索引擎显示的预览文字 -->
+		
+		<!-- css/js -->
+		<style type="text/css">
+			*{margin:0;padding:0}
+			body{font-size:15px;font-family:"微软雅黑";color:#333333;}
+			@font-face {font-family:AveFedan; src:url('../../font/AveFedan.ttf');}
+			.notbold {font-weight:normal;}
+			html{height: 100%;}
+			body{background:url('../../img/scandal.jpg');background-repeat:no-repeat;background-size:contain;background-position:center;position:relative;padding:2%;margin:0;height:90%;}
+			.content{background:rgba(255,255,255,0.8);border:1px solid black;border-radius:5px;padding: 10px;padding-left:20px;padding-right:20px;min-height:99%;max-height:99%;min-width:95%;max-width:95%;overflow:auto;}
+			
+			hr {clear:both;margin-bottom:2%;border:0;border-top:1px solid silver;}
+			
+			.prettyprint {white-space: pre-wrap;}
+			pre {-moz-tab-size:0; /* Firefox 4+ */-o-tab-size:0; /* Opera 11.5 & 12.1 only */tab-size:0; /* Chrome 21+, Safari 6.1+, Opera 15+ */}
+		
+			.level_1_table,.level_1_table td{margin-left:3em;border:1px solid grey;border-collapse:collapse;padding:5px;}
+			
+			.table1{margin-left:3em;border-collapse:collapse;padding:5px;width:80%;margin:0 20px auto;text-align:center;}
+			.table1,.table1 td{border-bottom:1px solid #f5f5f5;line-height:30px;}
+			.table1 thead .t_title{font-size:21px;}
+			.table1 thead .t_head{background:#f5f5f5;font-weight:bold;}
+			.table1 tbody tr:hover{background:#f5f5f5;}
+			.table1 tbody tr td:hover{background:#007cd7;color:#f5f5f5;)
+		</style>
+
+		<script>
+			var p = document.querySelector(".prettyprint");
+			p.textContent = p.textContent.replace(/^\t*/mg, "");
+		</script>
+	</head>
+	<body>
+		<div class="content">
+		
+			<pre class="prettyprint">
+				<strong>CSS 文本属性定义文本的外观</strong>
+				
+				  <1> 文本的颜色（color ，背景<background-color>） ;
+
+				  <2> 字符间距 （letter-spacing: 20px; letter-spacing: -0.5em;）;
+
+				  <3> 行间距 （line-height: 30px; line-height: 200%; line-height: 2;）;
+
+				  <4> 对齐文本 （text-align: center/left/right） ;
+
+				  注：<del>16px=1em, 将原来的px数值除以16，然后换上em作为单位就ok</del>
+				      em 是相对尺寸，1（em） = 当前位置文字大小（px）
+
+				  <5> 装饰文本 text-decoration; 
+					<table class="level_1_table">
+						<tr>
+							<td><b>值</b></td>
+							<td><b>描述</b></td>
+						</tr>
+						<tr>
+							<td>none</td>
+							<td>默认，定义标准的文本。</td>
+						</tr>
+						<tr>
+							<td>underline</td>
+							<td style="text-decoration:underline;">定义文本下的一条线</td>
+						</tr>
+						<tr>
+							<td>overline</td>
+							<td style="text-decoration:overline;">定义文本上的一条线</td>
+						</tr>
+						<tr>
+							<td>line-through</td>
+							<td style="text-decoration:line-through;">定义穿过文本的一条线</td>
+						</tr>
+						<tr>
+							<td>blink</td>
+							<td>定义闪烁的文本（deprecated）</td>
+						</tr>
+						<tr>
+							<td>inherit</td>
+							<td>规定应该从父元素继承 text-decoration 属性的值</td>
+						</tr>
+					</table>
+				  <6> 对文本进行缩进 text-indent（将段落的第一行缩进）;
+					<table class="level_1_table">
+						<tr>
+							<td>值</td>
+							<td>描述</td>
+						</tr>
+						<tr>
+							<td>length</td>
+							<td>定义固定的缩进，默认：0
+								<p style="text-indent:30px;">text-indent:30px;</p>
+							</td>
+						</tr>
+						<tr>
+							<td>%</td>
+							<td>定义基于父元素宽度的百分比的缩进
+								<p style="text-indent:30%">text-indent:10%;</p>
+							</td>
+						</tr>
+					</table>
+			</pre>
+			<hr color="grey">
+			<pre class="prettyprint">
+				<strong>控制文本中的字母</strong>
+
+				  text-transform 属性控制文本的大小写
+				  capitalize，uppercase，lowercase
+					<table class="level_1_table">
+						<tr>
+							<td><b>值</b></td>
+							<td><b>描述</b></td>
+						</tr>
+						<tr>
+							<td>none</td>
+							<td>默认。定义带有小写字母和大写字母的标准文本。</td>
+						</tr>
+						<tr>
+							<td>capitalize</td>
+							<td style="">额我那本中的每个单词以大写字母开头。</td>
+						</tr>
+						<tr>
+							<td>uppercase</td>
+							<td>定义仅有大写字母。</td>
+						</tr>
+						<tr>
+							<td>lowercase</td>
+							<td>定义无大写字母，仅有小写字母。</td>
+						</tr>
+					</table>
+			</pre>
+			<hr color="grey">
+			<pre class="prettyprint">
+				<strong>CSS 字体属性定义文本</strong>
+
+				  <1> 文本的大小（font-size）
+
+				  <2> 字体系列 （font-family）
+
+				  <3> 字体风格（font-style：normal / italic / oblique）
+					<table class="level_1_table">
+						<tr>
+							<td><b>值</b></td>
+							<td><b>描述</b></td>
+						</tr>
+						<tr>
+							<td>normal</td>
+							<td style="font-style:normal">默认值，浏览器显示一个标准的字体样式</td>
+						</tr>
+						<tr>
+							<td>italic</td>
+							<td style="font-style:italic">浏览器会显示一个斜体的字体样式</td>
+						</tr>
+						<tr>
+							<td>oblique</td>
+							<td style="font-style:oblique">浏览器会显示一个倾斜的字体样式</td>
+						</tr>
+					</table>
+				  <4> font-weight 属性设置文本的粗细 （font-weight: normal / bold / bolder / lighter / 100...）
+					<table class="level_1_table">
+						<tr>
+							<td><b>值</b></td>
+							<td><b>描述</b></td>
+						</tr>
+						<tr>
+							<td>notmal</td>
+							<td style="font-weight:normal;">默认值，定义标准的字符</td>
+						</tr>
+						<tr>
+							<td>bold</td>
+							<td style="font-weight:bold;">定义粗体字符</td>
+						</tr>
+						<tr>
+							<td>bolder</td>
+							<td style="font-weight:bolder;">定义更粗的字符</td>
+						</tr>
+						<tr>
+							<td>lighter</td>
+							<td style="font-weight:lighter">定义更细的字符</td>
+						</tr>
+						<tr>
+							<td>100<br />
+								200<br />
+								300<br />
+								400<br />
+								500<br />
+								600<br />
+								700<br />
+								800<br />
+								900</td>
+							<td><span style="font-weight:100;">定义由粗到细的字符。400等同于normal，而700等同于bold</span><br />
+								<span style="font-weight:200;">定义由粗到细的字符。400等同于normal，而700等同于bold</span><br />
+								<span style="font-weight:300;">定义由粗到细的字符。400等同于normal，而700等同于bold</span><br />
+								<span style="font-weight:400;">定义由粗到细的字符。400等同于normal，而700等同于bold</span><br />
+								<span style="font-weight:500;">定义由粗到细的字符。400等同于normal，而700等同于bold</span><br />
+								<span style="font-weight:600;">定义由粗到细的字符。400等同于normal，而700等同于bold</span><br />
+								<span style="font-weight:700;">定义由粗到细的字符。400等同于normal，而700等同于bold</span><br />
+								<span style="font-weight:800;">定义由粗到细的字符。400等同于normal，而700等同于bold</span><br />
+								<span style="font-weight:900;">定义由粗到细的字符。400等同于normal，而700等同于bold</span>
+							</td>
+						</tr>
+					</table>
+					Note: bolder, lighter是相对其父对象来说的。如果父对象的值为 normal，子对象值设为 bolder，则最终以 bold，即粗体显示。
+			</pre>
+			<hr color="grey">
+			<pre class="prettyprint">
+				<strong>CSS 表格样式：</strong>
+
+				  <1> 表格边框 (border) ;
+				      Ex: border:1px solid red;
+				  <2> 折叠边框 (border-collapse:collapse;);
+
+				  <3> 表格宽度和高度 (width, height);
+
+				  <4> 表格文本对齐 (text-align);
+				      Ex: text-align:center;
+				  <5> 表格内边距 (padding);
+
+				  <6> 表格颜色 (background);
+
+					<table class="table1">
+						<thead>
+							<tr class="t_title">
+								<td colspan="6" style="text-align:center;">Python 战队人员明细</td>
+							</tr>
+							<tr class="t_head">
+								<td>姓名</td>
+								<td>年龄</td>
+								<td>QQ</td>
+								<td>职务</td>
+								<td>队长</td>
+								<td>副队</td>
+							</tr>
+						</thead>
+						<tbody id="">
+							<tr>
+								<td>陈远</td>
+								<td>25</td>
+								<td>766111704</td>
+								<td>学生</td>
+								<td rowspan="10">文涛</td>
+								<td rowspan="10">亚鸽</td>
+							</tr>
+							<tr>
+								<td>纯萌新</td>
+								<td>不详</td>
+								<td>407271117</td>
+								<td>----</td>
+							</tr>
+							<tr>
+								<td>方傅浩敏</td>
+								<td>不详</td>
+								<td>573241012</td>
+								<td>运维</td>
+							</tr>
+							<tr>
+								<td>俊少</td>
+								<td>20</td>
+								<td>763294719</td>
+								<td>学森</td>
+							</tr>
+							<tr>
+								<td>老夏</td>
+								<td>25</td>
+								<td>943460124</td>
+								<td>战员</td>
+							</tr>
+							<tr>
+								<td>林溢彬</td>
+								<td>19</td>
+								<td>915323052</td>
+								<td>学</td>
+							</tr>
+							<tr>
+								<td>苏闫兵</td>
+								<td>26</td>
+								<td>1293915101</td>
+								<td>----</td>
+							</tr>
+							<tr>
+								<td>小黄</td>
+								<td>24</td>
+								<td>1510685302</td>
+								<td>测试</td>
+							</tr>
+							<tr>
+								<td>邢亚鸽</td>
+								<td>20</td>
+								<td>1264826185</td>
+								<td>学霸</td>
+							</tr>
+							<tr>
+								<td>张文涛</td>
+								<td>不详</td>
+								<td>861829667</td>
+								<td>班长</td>
+							</tr>
+						</tbody>
+					</table>
+			</pre>
+		</div>
+		
+
+
+	</body>
+</html>

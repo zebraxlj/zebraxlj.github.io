@@ -1,0 +1,82 @@
+<!DOCTYPE html> <!-- w3 规范 -->
+<html>
+	<head>
+		<!-- 编码及：中文编码（GBK/GB2312），国际编码（utf-8） -->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">  <!-- meta 是单标签; charset 根据服务器决定 -->
+		<!-- 声明当前页面三要素 -->
+		<title>HTML 的国际化标准模板</title>  <!-- <= 31 字 -->
+		<meta name="Keywords" content="keyword,keyword,keyword"> <!-- 搜索引擎的搜索关键词 -->
+		<meta name="Description" content=""> <!-- <= 80 字 搜索引擎显示的预览文字 -->
+		
+		<!-- css/js -->
+		<style type="text/css">
+			*{margin:0;padding:0}
+			body{font-size:15px;font-family:"微软雅黑";color:#333333;background:url("img/bg_beach.jpg");overflow:auto;}
+			.notbold {font-weight:normal;}
+			
+			.clear{margin:0; padding:0; clear:both;}
+			
+			.top_wrap,.top_wrap_bright{width:100%;min-width:800px;height:32px;font-size:12px;font-family:"华文细黑";line-height:32px;}
+			.top_wrap{border-bottom:1px solid #ebebeb;color:#333333;}
+			.top_wrap_bright{background:rgba(0,0,0,0.3);color:white;}
+			
+			.top_weather,.top_weather_bright{float:left;margin:0 0 0 15px;width:170px;height:inherit;}
+			.top_weather,.top_weather_bright span{height:inherit;vertical-align:text-bottom;display:inline-block;}
+			.top_weather_bright span{color:white;}
+			.location_icon{background:url("img/load_spis_ddabf4f0.png"); background-repeat:no-repeat; background-attachment:fixed; background-position:15px 7px; width:12px; margin-right:5px; display:inline-block;}
+			.location_icon_bright{background:url("img/load_spis_ddabf4f0.png"); background-repeat:no-repeat; background-attachment:fixed; background-position:0px 7px; width:12px; margin-right:5px; display:inline-block;}
+			
+			.top_conf{float:left;}
+			.top_conf .elem{margin-right:16px;display:inline-block;}
+			.top_conf .elem_bright{margin-right:16px;display:inline-block;color:white;}
+			
+			.top_menu,.top_menu_bright{float:right;font-family:"微软雅黑"}
+			.top_menu,.top_menu_bright .elem{margin-right:16px;display:inline-block;font-size:13px;font-weight:bold;}
+			/*.top_menu .elem{margin-right:16px;display:inline-block;font-size:13px;font-weight:bold;}
+			.top_menu .elem_bright{margin-right:16px;display:inline-block;font-size:13px;font-weight:bold;color:white;}
+			*/
+			.top_menu_bright .elem{color:white;}
+			.search_wrap{background:rgba(0,0,0,0);margin:0 auto 0 auto;width:100%;display:inline-block;}
+			.home_page_logo{display:block;margin:0 auto;}
+			.search_form{display:block;margin:0 auto 0 auto;width:643px;font-size:0;} /*font-size:0 -- prevent white space between elements*/
+			.home_search_entry{width:480px;height:20px;padding:9px 50px 9px 9px;border:1px solid rgba(0,0,0,0.35);border-right:0;outline:0;vertical-align:top;}
+			.home_search_entry_bright{width:480px;height:20px;padding:10px 50px 10px 7px;border:0;outline:0;vertical-align:top;}
+			.home_search_button{width:104px;height:40px;background:#3388ff;border:0;font-size:16px;color:white;outline:0;}
+			
+			#more_app_button{border:0;width:86px;height:32px;background:#398bfb;font-size:13px;color:white;outline:0;vertical-align:top;}
+			/*#more_app_button{border:0;width:86px;height:32px;background:#398bfb;font-size:13px;color:white;outline:0;vertical-align:top;}*/
+			
+		</style>
+	</head>
+	<body>
+		<div class="top_wrap_bright">
+			<div class="top_weather_bright">
+				<span class="location_icon_bright"></span>
+				<!--<img src="img/load_spis_ddabf4f0.png" alt="" width="" height=""/>-->
+				<span>查看天气信息，</span>
+				<span>设置城市</span>
+				
+			</div>
+			<div class="top_conf">
+				<span class="elem">宝箱</span>
+				<span class="elem">换肤</span>
+				<span class="elem">消息</span>
+			</div>
+			<div class="top_menu_bright">
+				<a href="#" target="_blank" class="elem">新闻</a>
+				<a href="#" target="_blank" class="elem">好123</a>
+				<a href="#" target="_blank" class="elem">地图</a>
+				<a href="#" target="_blank" class="elem">视频</a>
+				<a href="#" target="_blank" class="elem">贴吧</a>
+				<input type="button" id="more_app_button" value="更多产品"/>
+			</div>
+		</div>
+		<div class="search_wrap">
+			<img src="img/logo_white.png" alt="" width="270" height="129" class="home_page_logo"/>
+			<form class="search_form">
+				<input type="text" class="home_search_entry_bright"/>
+				<input type="submit" value="百度一下" class="home_search_button"/>
+			</form>
+		</div>
+	</body>
+</html>

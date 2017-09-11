@@ -1,0 +1,154 @@
+<!DOCTYPE html> <!-- w3 规范 -->
+<html>
+	<head>
+		<!-- 编码及：中文编码（GBK/GB2312），国际编码（utf-8） -->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">  <!-- meta 是单标签; charset 根据服务器决定 -->
+		<!-- 声明当前页面三要素 -->
+		<title>HTML 的国际化标准模板</title>  <!-- <= 31 字 -->
+		<meta name="Keywords" content="keyword,keyword,keyword"> <!-- 搜索引擎的搜索关键词 -->
+		<meta name="Description" content=""> <!-- <= 80 字 搜索引擎显示的预览文字 -->
+		
+		<!-- css/js -->
+		<style type="text/css">
+			*{margin:0;padding:0}
+			body{font-size:15px;font-family:"微软雅黑";color:#333333;}
+			@font-face {font-family:AveFedan; src:url('../../font/AveFedan.ttf');}
+			.notbold {font-weight:normal;}
+			/*body{background:red;}*/
+			html{height: 100%;}
+			body{background:url('../../img/scandal.jpg');background-repeat:no-repeat;background-size:contain;background-position:center;position:relative;padding:2%;margin:0;height:90%;}
+			.content{background:rgba(255,255,255,0.8);border:1px solid black;border-radius:5px;padding: 10px;padding-left:20px;padding-right:20px;min-height:99%;max-height:99%;min-width:95%;max-width:95%;overflow:auto;}
+			
+			hr {clear:both; padding:.1px; margin-bottom:2%;}
+			
+			.prettyprint {white-space: pre-wrap;}
+			pre {-moz-tab-size:0; /* Firefox 4+ */-o-tab-size:0; /* Opera 11.5 & 12.1 only */tab-size:0; /* Chrome 21+, Safari 6.1+, Opera 15+ */}
+		</style>
+
+		<script>
+			var p = document.querySelector(".prettyprint");
+			p.textContent = p.textContent.replace(/^\t*/mg, "");
+		</script>
+	</head>
+	<body>
+		<div class="content">
+		
+			<pre class="prettyprint">
+				<strong>HTML标签 - 表单：</strong>
+
+				  表单是一个包含表单元素的区域。
+                  
+				  表单元素是允许用户在表单中（比如：文本域、下拉列表、单选框、复选框等等）输入信息的元素
+                  
+				  表单使用表单标签（&lt;form&gt;）定义
+                  
+				  
+				  具体事例：
+                  
+				  &lt;form&gt;
+				    input 元素 （多数情况下被用到的表单标签是输入标签，输入类型是由类型属性（type）定义的）
+				  &lt;/form&gt;
+			</pre>
+			
+			<hr color="grey">
+
+			<pre class="prettyprint">
+				<strong>HTML标签 - &lt;select&gt;标签：</strong>
+
+				  select 元素可创建单选或多选菜单
+                  
+				  注：当提交表单时，浏览器会提交选定的项目，或者收集用逗号分隔的多个选项
+                  
+				  将其合成一个单独的参数列表，并且在将 &lt;select&gt; 表单数据提交给服务器时包括 name 属性
+                  
+				  &lt;form&gt;
+                  
+				    &lt;select name=""  id=""&gt;
+				    &lt;option value="1"&gt;1月&lt;/option&gt;
+				      &lt;option value="2"&gt;2月&lt;/option&gt;
+				    &lt;/select&gt;
+				
+				  &lt;/form&gt;
+
+
+				常用到的属性：disabled="disabled"  name="sel"  size="2"
+			</pre>
+
+			<hr color="grey">
+
+			<pre class="prettyprint">
+				<strong>HTML标签 - 隐藏域隐藏标签：</strong>
+
+
+				  隐藏域在页面中对于用户是不可见的，在表单中插入隐藏域的目的在于收集或发送信息，以利于被处理
+                  
+				  表单的程序所使用。浏览者单击发送按钮发送表单的时候，隐藏域的信息也被一起发送到服务器。。
+                  
+                  
+				  &lt;form&gt;
+				    &lt;input type="hidden" name="hid" value="value"&gt;
+				  &lt;/form&gt;
+			</pre>
+
+			<hr color="grey">
+
+			<pre class="prettyprint">
+				<strong>HTML标签 - label标签</strong>
+
+				  &lt;label&gt; 标签为 input 元素定义标注（标记）；
+                  
+				  label 元素不会向用户呈现任何特殊效果。不过，它为鼠标用户改进了可用性。如果您在 label 元素内点击文本，就会触发此控件。
+                  
+				  就是说，当用户选择该标签时，浏览器就会自动将焦点转到和标签相关的表单控件上&lt;label&gt; 标签的 for 属性应当与相关元素的 
+                  
+				  id 属性相同。
+                  
+				  &lt;form&gt;
+                  
+				    &lt;label for="nan"&gt;男&lt;/label&gt;
+				    &lt;input type="radio" name="sex" id="nan" /&gt;&lt;br /&gt;
+				    &lt;label for="nv"&gt;女&lt;/label&gt;
+				    &lt;input type="radio" name="sex" id="nv" /&gt;&lt;br /&gt;
+				    &lt;label for="xq"&gt;篮球&lt;/label&gt;
+				    &lt;input type="checkbox" id="xq"/&gt;
+                  
+				  &lt;/form&gt;
+			</pre>
+
+			<hr color="grey">
+
+			<pre class="prettyprint">
+				<strong>HTML标签 - 表格：</strong>
+
+				  表格由 &lt;table&gt; 标签来定义。每个表格均有若干行（由 &lt;tr&gt; 标签定义），每行被分割为若干单元格（由 &lt;td&gt; 标签定义）。字母 td 指表格数据（table data），即数据单元格的内容。数据单元格可以包含文本、图片、列表、段落、表单、水平线、表格等等
+                  
+				  &lt;table border="1"&gt;
+				    &lt;tr&gt;
+				      &lt;td&gt;row(行1), cell(列1)&lt;/td&gt;
+				      &lt;td&gt;row(行1), cell(列1)&lt;/td&gt;
+				    &lt;/tr&gt;
+				    &lt;tr&gt;
+				      &lt;td&gt;row(行2), cell(列2)&lt;/td&gt;
+				      &lt;td&gt;row(行2), cell(列2)&lt;/td&gt;
+				    &lt;/tr&gt;
+				  &lt;/table&gt;
+			</pre>
+
+			<hr color="grey">
+			
+			<pre class="prettyprint">
+				<strong>表单 - 应用</strong>
+
+				&lt;1&gt; 文本域，多行文本表单，单选按扭，多选按扭，下拉列表，按钮标签；
+
+				&lt;2&gt; &lt;select&gt;标签 , 隐藏域隐藏标签,  label标签, 表格;
+
+				&lt;3&gt;  完整表单的总结整合
+			</pre>
+			
+		</div>
+		
+
+
+	</body>
+</html>

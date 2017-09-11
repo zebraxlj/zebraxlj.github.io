@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>HTML 完整表单的总结整合</title>
+		<meta name="Keywords" content="html tag,form,input,text,textarea,radio button,checkbox,select,submit,table,hidden,label">
+		<meta name="Description" content="HTML 完整表单的总结整合。包含知识点：文本域、多行文本表单、单选按钮、多选按钮、下拉列表、按钮标签、<select>标签、隐藏域隐藏标签、label标签以及表格">
+		
+		<!-- css/js -->
+		<style type="text/css">
+			.notbold {font-weight:normal;}
+			
+			body{margin:0}
+			
+			.header {
+				min-width:60px;
+				/*background:rgba(0,0,0,.5);*/
+			}
+			.header .login{
+				float:right;
+				margin:5px 30px 5px 5px;
+				height:50px;
+				line-height:50px;
+			}
+			.header .login input{
+				margin:2px;
+				border-radius:5px;
+				border-style:none;
+				height:25px;
+			}
+			.header:after {clear:both;content:'.';display:block;width: 0;height: 0;visibility:hidden;}
+			
+			.wrapper {
+				margin:3em auto;
+				overflow:hidden;
+				/*max-width:950px;*/
+				position:absolute;
+				left:50%;
+				top:50%;
+				margin-left:-441px;
+				margin-top:-210px;
+				border:1px solid rgba(0,0,0,0.3)
+			}
+			.wrapper .panel {
+				float:left;
+				background-color:red;
+				display:table-cell;
+			}
+			.wrapper .panel input{outline-width:0;}
+			.wrapper .panel .but{background-color:white;outline-width:0;}
+			.wrapper .board {
+				float:left;
+				padding-left:30px;
+				padding-right:80px;
+				background-color:#ffffff;
+				font-size:small;
+				overflow:auto;
+				display:table-cell;
+				max-height:420px;
+				/*padding-bottom: 500em;
+				margin-bottom: -500em;*/
+			}
+			.wrapper .board table,tr,td {
+				border:3px solid rgba(0,0,0,0.02);
+			}
+			.panel_section_title {
+				vertical-align:top; padding-top:10px; width:85px;
+			}
+			.panel_option_list {
+				margin:0;
+				padding:0;
+				list-style:none;
+			}
+			.panel_option_list li,dt,dd {margin:5px;}
+			.panel_option_list dt dd {margin:5px; margin-left:2ex;}
+			.panel_button_list {
+				padding:0;
+				margin:0;
+				max-height:150%;
+			}
+			.panel_button_list li {
+				list-style:none;
+			}
+			.panel_button_list li input {
+				padding:10px;
+				width:150px;
+				border:0;
+				background-color:#f0f0f1;
+			}
+		</style>
+		<script>
+			function toggle_but_state(num){
+				for(var i=1; i<=12; i++){
+					var str = document.getElementById('but'+i);
+					if(i==num){
+						str.className="but"
+					}else{
+						str.className="";
+					}
+				}
+			}
+		</script>
+	</head>
+	<body background="http://i.imgur.com/jrp80JV.jpg">
+		<div class="header">
+			<!--http://www.minecraftforum.net/forums/mapping-and-modding/minecraft-mods/1286604-shaders-mod-updated-by-karyonix?page=34-->
+			<!-- <img src="http://www.ibanling.com/micro_forum/welive/img/weixin_icon.svg" alt="logo" width="60" height="50" style="margin:5px 5px 0px 5px;"/> -->
+			<div class="login">
+			<form action="#" method="post">
+				<input type="text" name="username" placeholder="用户名" />
+				<input type="password" name="password" placeholder="密 码" />
+				<input type="submit" value="登  陆" style="border:0; background-color:#059cd4; color:white;">
+			</form>
+			</div>
+		</div>
+		<!-- <div style="clear:both"></div> -->
+		<div class="wrapper">
+			<div class="panel">
+				<ul class="panel_button_list">
+					<li><input type="button" id="but1" value="登录" onClick="document.getElementById('登录').scrollIntoView();toggle_but_state('1');" class="but"/></li>
+					<li><input type="button" id="but2" value="主面板" onClick="document.getElementById('主面板').scrollIntoView();toggle_but_state('2');"/></li>
+					<li><input type="button" id="but3" value="状态" onClick="document.getElementById('状态').scrollIntoView();toggle_but_state('3');"/></li>
+					<li><input type="button" id="but4" value="会话窗口" onClick="document.getElementById('会话窗口').scrollIntoView();toggle_but_state('4');"/></li>
+					<li><input type="button" id="but5" value="信息展示" onClick="document.getElementById('信息展示').scrollIntoView();toggle_but_state('5');"/></li>
+					<li><input type="button" id="but6" value="提醒" onClick="document.getElementById('提醒').scrollIntoView();toggle_but_state('6');"/></li>
+					<li><input type="button" id="but7" value="热键" onClick="document.getElementById('热键').scrollIntoView();toggle_but_state('7');"/></li>
+					<li><input type="button" id="but8" value="声音" onClick="document.getElementById('声音').scrollIntoView();toggle_but_state('8');"/></li>
+					<li><input type="button" id="but9" value="软件更新" onClick="document.getElementById('软件更新').scrollIntoView();toggle_but_state('9');"/></li>
+					<li><input type="button" id="but10" value="文件管理" onClick="document.getElementById('文件管理').scrollIntoView();toggle_but_state('10');"/></li>
+					<li><input type="button" id="but11" disabled="disabled" value="文件共享" onClick="document.getElementById('文件共享').scrollIntoView();toggle_but_state('11');"/></li>
+					<li><input type="button" id="but12" disabled="disabled" value="音视频通话" onClick="document.getElementById('音视频通话').scrollIntoView();toggle_but_state('12');"/></li>
+				</ul>
+			</div>
+			<div class="board">
+				<table>
+					<tr><td class="panel_section_title" id="登录">登录：</td>
+						<td><ul class="panel_option_list">
+								<li><input type="checkbox" id="1" /><label for="1">开机时自动启动QQ</label></li>
+								<li><input type="checkbox" id="2" disabled="disabled" /><label for="2" style="color:grey">启动QQ时为我自动登陆</label></li>
+								<li><input type="checkbox" id="3" /><label for="3">总是打开登陆提示</label></li>
+								<li><input type="checkbox" id="4" /><label for="4">登陆后弹出上次未关闭会话</label></li>
+								<li><input type="checkbox" id="5" disabled="disabled" /><label for="5" style="color:grey">离线时自动启动QQ手机版(仅支持AndroidQQ5.2及以上版本)</label></li>
+								<li><input type="checkbox" id="6" /><label for="6">登陆后自动运行QQ宠物</label></li>
+								<li><input type="checkbox" id="7" /><label for="7">订阅“每日精选”，了解最新商品资讯</label></li>
+							</ul>
+						</td>
+					</tr>
+					<tr><td class="panel_section_title" id="主面板">主面板：</td>
+						<td><dl class="panel_option_list">
+								<dt><input type="checkbox" id="8" /><label for="8">始终保持在其他窗口前段</label></dt>
+								<dt><input type="checkbox" id="9" /><label for="9">停靠在桌面边缘时自动隐藏</label></dt>
+								<dt><input type="checkbox" id="10" /><label for="10">在任务栏通知区域显示QQ图标</label></dt>
+								<dt>关闭主面板时：</dt>
+									<dd><input type="radio" name="on_x_QQ" id="hide"/><label for="hide">隐藏到任务栏通知区域，不退出程序</label></dd>
+									<dd><input type="radio" name="on_x_QQ" id="exit"/><label for="exit">推出程序</label></dd>
+								<dt>您可以自由定制适合您的面板和功能，使用QQ更有效率</dt>
+									<dd><input type="button" value="界面管理器"></dd>
+							</dl>	
+						</td>
+					</tr>
+					<tr><td class="panel_section_title" id="状态">状态：</td>
+						<td>
+							<dl class="panel_option_list">
+								<dt>登陆后状态为：
+									<select name="disp_stat" size="1">
+										<option value="disp_online">我在线上</option>
+										<option value="disp_q">Q我吧</option>
+										<option value="disp_away">离开</option>
+										<option value="disp_busy">忙碌</option>
+										<option value="disp_quiet">请勿打扰</option>
+										<option value="disp_stealth">隐身</option>
+									</select>
+								</dt>
+								<dt><input type="checkbox" id="full_scr_busy" /><label for="full_scr_busy">运行全屏程序时切换至“忙碌”状态</label></dt>
+									<dd><p style="color:grey;margin:0;padding:0;">仅在“Q我吧”和“我在线上”状态下生效。</p></dd>
+								<dt><input type="checkbox" id="no_act_after" /><label for="no_act_after">鼠标键盘无操作</label><input type="number" value="5" style="width:40px;"/>分钟后：</dt>
+									<dd><input type="radio" name="no_act_after_opt" id="switch_stat_to"/><label for="switch_stat_to">将状态切换至
+										<select name="switch_stat" size="1">
+											<option value="switch_away">离开</option>
+											<option value="switch_busy">忙碌</option>
+										</select>
+									</dd>
+									<dd><input type="radio" name="no_act_after_opt" id="auto_lock"/><label for="auto_lock">自动锁定QQ</label></dd>
+								<dt><input type="checkbox" id="auto_reply"/><label for="auto_reply">离开、忙碌、请勿打扰时自动回复(100字以内)</label></dt>
+									<dd><textarea rows="3" cols="50" name="auto_reply_msg"></textarea></dd>
+							</dl>
+						</td>
+					</tr>
+					<tr><td class="panel_section_title" id="会话窗口">会话窗口：</td>
+						<td><ul class="panel_option_list">
+								<li><input type="checkbox" id="color_bubble"/><label for="color_bubble">使用多彩气泡聊天</label><input type="button" value="设置多彩气泡" style="margin-left:20px;"/></li>
+								<li><input type="checkbox" id="no_ads"/><label for="no_ads">不显示广告（会员设定项）</label><a href="http://kf.qq.com/faq/120313RRj6Bv130916BJ77FB.html">可屏蔽哪些广告？</a></li>
+								<li><input type="checkbox" id="auto_pop"/><label for="auto_pop">允许来消息时自动弹出窗口</label><li>
+								<li><input type="checkbox" id="auto_play_emoji"/><label for="auto_play_emoji">允许自动播放魔法表情和超级表情</label></li>
+								<li><input type="checkbox" id="qqShow_emoji"><label for="qqShow_emoji">允许使用QQ秀聊天随动表情</label></li>
+								<li><input type="checkbox" id="show_chat_sidePane"/><label for="show_chat_sidePane">总是显示好友聊天窗口侧边栏</label></li>
+								<li><input type="checkbox" id="allow_shaking"/><label for="allow_shaking">允许接受窗口抖动</label></li>
+								<li><input type="checkbox" id="show_search_hint"/><label for="show_search_hint">显示热词搜索提示</label></li>
+								<li><input type="checkbox" id="show_history"/><label for="show_history">显示历史消息记录</label></li>
+								<li><input type="checkbox" id="combine_chat_window"/><label for="combine_chat_window">合并会话窗口</label></li>
+							</ul>
+						</td>
+					</tr>
+					<tr><td class="panel_section_title" id="信息展示">信息展示：</td>
+						<td><ul class="panel_option_list">
+								<li><input type="checkbox" id="mini"/><label for="mini">在迷你资料卡上显示业务图标</label></li>
+								<li><input type="checkbox" id="mini_show_update_log"/><label for="mini_show_update_log">在迷你资料卡上显示更新摘要</label></li>
+								<li><input type="checkbox" id="chat_show_friend_update_log"/><label for="chat_show_friend_update_log">在聊天窗口内展示好友的更新摘要</label></li>
+							</ul>
+						</td>
+					</tr>
+					<tr><td class="panel_section_title" rowspan="3" id="提醒">提醒：</td>
+						<td><dl class="panel_option_list">
+								<dt><input type="checkbox" id="notify_chat"/><label for="notify_chat">会话消息提醒</label></dt>
+								<dt><input type="checkbox" id="notify_email"/><label for="notify_email">新邮件提醒</label></dt>
+								<dt><input type="checkbox" id="notify_android"/><label for="notify_android">安卓设备连接提醒</label></dt>
+									<dd><p style="color:grey;padding:0;margin:0;">当插入安卓设备时，提示安装或更新QQ手机版</p></dd>
+							</ul>
+						</td>
+					</tr>
+					<tr>
+						<td>您可以设置是否在屏幕右下角收到来自QQ空间的通知，<a href="http://user.qzone.qq.com/943460124/profile/permit/others">进入设置</a>。</td>
+					</tr>
+					<tr>
+						<td><dl class="panel_option_list">
+							<dt>好友上线提示</dt>
+								<dd><input type="radio" name="notify_friend_logon" id="no_notification"/><label for="no_notification">关闭好友上线提示</label></dd>
+								<dd><input type="radio" name="notify_friend_logon" id="all_notification"/><label for="all_notification">全部好友上线提示</label></dd>
+							</dl>
+						</td>
+					</tr>
+					<tr><td class="panel_section_title" id="热键">热键：</td>
+						<td><p>您可以通过点击选择要更改的热键。</p>
+							<input type="button" value="设置热键"/>
+						</td>
+					</tr>
+					<tr><td class="panel_section_title" id="声音">声音：</td>
+						<td><input type="checkbox" id="mute_all" style="margin-top:10px;"/><label for="mute_all">关闭所有声音</label><br />
+							<input type="button" value="设置提示音" style="margin-top:10px;"/>
+						</td>
+					</tr>
+					<tr><td class="panel_section_title" id="软件更新">软件更新：</td>
+						<td><dl class="panel_option_list">
+								<dt>你可以选择本台计算机上QQ的更新方式：</dt>
+								<dt><input type="radio" name="update_QQ" id="auto_install" /><label for="auto_install">有更新时 自动为我安装(推荐)</label></dt>
+									<dd style="color:grey">当QQ有更新时，只能选择最佳的软件封信方案，自动完成更新的下载与安装，省心省力</dd>
+								<dt><input type="radio" name="update_QQ" id="manual_update" /><label for="manual_update">有更新时不要安装，但提醒我</label></dt>
+									<dd style="color:grey;">此方式不影响安全补丁等重要更新的自动安装。</dd>
+							</dl>
+						</td>
+					</tr>
+					<tr><td class="panel_section_title" id="文件管理">文件管理：</td>
+						<td><dl class="panel_option_list">
+								<dt>默认吧接收到的文件保存到此文件夹中：</dt>
+								<dt><input type="text" name="receive_path" /></dt>
+								<dt><input type="button" value="更改目录" /><input type="button" value="打开文件夹"/></dt>
+								<dt><input type="checkbox" id="allow_quick_sending" /><label>允许通过秒传发送的文件</label></dt>
+									<dd color="grey">秒传发送的文件，将使用激素服务器辅助接收。能提高文件传输速度，缩短传输时间</dd>
+								<dt>选择个人的文件夹(用于保存消息记录等数据)的保存位置</dt>
+								<dt><input type="radio" name="personal_folder" disabled="disabled" /><label for="personal_folder" style="color:grey">保存到安装目录下(Vista、Windows 7或是更高版本的系统不支持此选项)</label></dt>
+								<dt><input type="radio" name="personal_folder" id="my_doc" /><label for="my_doc">保存到“我的文档”(推荐)</label></dt>
+								<dt><input type="radio" name="personal_folder" id="customize_dir" /><label for="customize_dir">自定义</label></dt>
+									<dd><input type="text" name="personal_path" /> <input type="button" value="浏览"/><dd/>
+								<dt><input type="button" value="打开个人文件夹"/></dt>
+								<dt>定期进行文件清理可以有效节省硬盘空间。<input type="button" value="前去清理" style="margin-left:10px;"/></dt>
+								<dt><input type="checkbox" id="size_over"/><label for="size_over">当个人文件夹大小超过<input type="number" id="personal_size"/>MB时，提醒我清理</label></dt>
+								<dt><input type="checkbox" id="send_via_QQ"/><label for="send_via_QQ">在系统右键菜单增加“通过QQ发送到我的手机及好友”选项</label></dt>
+							<dl>
+						</td>
+					</tr>
+					<tr><td><br /><br /></td></tr>
+					<tr><td colspan="2">以上均为纯手工打，不含复制粘贴，由于工作量实属庞大，文件共享和音视频通话省略。。。</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</body>
+</html>

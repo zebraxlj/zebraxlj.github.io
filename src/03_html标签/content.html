@@ -1,0 +1,169 @@
+<!DOCTYPE html> <!-- w3 规范 -->
+<html>
+	<head>
+		<!-- 编码及：中文编码（GBK/GB2312），国际编码（utf-8） -->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">  <!-- meta 是单标签; charset 根据服务器决定 -->
+		<!-- 声明当前页面三要素 -->
+		<title>HTML 的国际化标准模板</title>  <!-- <= 31 字 -->
+		<meta name="Keywords" content="keyword,keyword,keyword"> <!-- 搜索引擎的搜索关键词 -->
+		<meta name="Description" content=""> <!-- <= 80 字 搜索引擎显示的预览文字 -->
+		
+		<!-- css/js -->
+		<style type="text/css">
+			*{margin:0;padding:0}
+			body{font-size:15px;font-family:"微软雅黑";color:#333333;}
+			@font-face {font-family:AveFedan; src:url('../../font/AveFedan.ttf');}
+			.notbold {font-weight:normal;}
+			/*body{background:red;}*/
+			html{height: 100%;}
+			body{background:url('../../img/scandal.jpg');background-repeat:no-repeat;background-size:contain;background-position:center;position:relative;padding:2%;margin:0;height:90%;}
+			.content{background:rgba(255,255,255,0.8);border:1px solid black;border-radius:5px;padding: 10px;padding-left:20px;padding-right:20px;min-height:99%;max-height:99%;min-width:95%;max-width:95%;overflow:auto;}
+			
+			hr {clear:both; padding:.1px; margin-bottom:2%;}
+			
+			.prettyprint {white-space: pre-wrap;}
+			pre {-moz-tab-size:0; /* Firefox 4+ */-o-tab-size:0; /* Opera 11.5 & 12.1 only */tab-size:0; /* Chrome 21+, Safari 6.1+, Opera 15+ */}
+		</style>
+		<script>
+			var p = document.querySelector(".prettyprint");
+			p.textContent = p.textContent.replace(/^\t*/mg, "");
+		</script>
+	</head>
+	<body>
+		<div class="content">
+		
+			<pre class="prettyprint">
+				<strong>HTML特殊符号：</strong>
+				<table border="1px solid gray">
+					<tr>
+						<td>特舒符号</td>
+						<td>代码</td>
+					</tr>
+					<tr>
+						<td>空格</td>
+						<td><pre>&amp;nbsp;</pre></td>
+					</tr>
+					<tr>
+						<td>大于号（&gt;）</td>
+						<td>&amp;gt;</td>
+					</tr>
+					<tr>
+						<td>小于号（&lt;）</td>
+						<td>&amp;lt;</td>
+					</tr>
+					<tr>
+						<td>引号</td>
+						<td>&amp;quot;</td>
+					</tr>
+					<tr>
+						<td>版权号（&copy;）</td>
+						<td>&amp;copy;</td>
+					</tr>
+				</table>
+			</pre>
+			
+			<hr color="grey">
+
+			<pre class="prettyprint">
+				<strong>HTML标签 - 字体效果（font标签）</strong>
+
+				&lt;font&gt; 规定文本的字体、字体尺寸、字体颜色。
+
+				&lt;font size="字体大小"  color="字体颜色"  face="字体类型"&gt;要设置的文字&lt;/font&gt;
+
+				size: 12,13 ...
+
+				color: red,blue,green,yellow  或者 颜色值#333
+
+				face:  "黑体" "微软雅黑" "宋体"
+			</pre>
+
+			<hr color="grey">
+
+			<pre class="prettyprint">
+				<strong>&lt;p&gt; 标签定义段落</strong>
+
+				p 元素会自动在其前后创建一些空白。浏览器会自动添加这些空间，您也可以在样式表中规定。
+
+				&lt;p&gt;这是段落。&lt;/p&lt;
+				&lt;p&gt;这是段落。&lt;/p&lt;
+				&lt;p&gt;这是段落。&lt;/p&lt;
+
+				&lt;p&gt;段落元素由 p 标签定义。&lt;/p&gt;
+			</pre>
+
+			<hr color="grey">
+
+			<pre class="prettyprint">
+				<strong>span 标签:</strong>
+
+				&lt;span&gt; 标签被用来组合文档中的行内元素。
+
+				 注：span 没有固定的格式表现。当对它应用样式时，它才会产生视觉上的变化
+
+				&lt;p&gt;&lt;span&gt;span标签：&lt;/span&gt;... ... ...&lt;/p&gt;
+			</pre>
+
+			<hr color="grey">
+
+			<pre class="prettyprint">
+				strong/b 标签
+				
+				&lt;strong&gt; 用于强调文本，但它强调的程度更强一些，表示重要文本，有利于SEO优化。
+				
+				&lt;b&gt; 标签呈现粗体文本效果。
+				
+				&lt;b&gt; 标签是基于内容的样式标签 &lt;strong&gt; 的物理版本，但它没有后者的扩展意义。
+				
+				&lt;b&gt; 标签明确地将包括在它和其结束标签之间的字符或者文本变成粗体。如果某种加粗的字体不可用，浏览器将使用一些其他的表现方法，例如反相显示或者加下划线等。
+			</pre>
+
+			<hr color="grey">
+			
+			<pre class="prettyprint">
+				<strong>超链接 - a标签 :</strong>
+
+
+				<b>页面链接语法</b>
+
+				链接到其他页面&lt;a  href=“链接地址” target="_blank"&gt;连接标志 &lt;/a&gt;
+
+				标签的 target属性规定在何处打开链接文档
+
+				_blank 浏览器总在一个新打开、未命名的窗口中载入目标文档
+
+
+				<b>链接到本页面</b>
+
+				1. 首先创建一个锚链接的锚记点：&lt;a  href=“#锚记点名称”&gt;主题名称&lt;/a&gt;
+
+				2. 然后在具体要链接到的地方设置name:&lt;a  name=“锚记点名称”&gt;&lt;/a&gt;（锚记点前面要加上#号）
+
+
+				<b>电子邮件链接</b>
+
+				&lt;a  href=“mailto：邮件地址”&gt;站长邮箱 &lt;/a&gt;(注意不能忘了mailto)
+			</pre>
+			
+			<hr color="grey">
+
+			<pre class="prettyprint">
+				<strong>marquee标签:</strong>
+
+				&lt;marquee&gt; ... &lt;/marquee&gt;
+				&lt;marquee&gt;啦啦啦，我会移动耶！&lt;/marquee&gt;
+
+
+				文字移动属性的设置  direction
+
+				方向 &lt;direction=#&gt; #=left, right
+				&lt;marquee direction=left&gt;啦啦啦，我从右向左移！&lt;/marquee&gt; &lt;P&gt;
+				&lt;marquee direction=right&gt;啦啦啦，我从左向右移！&lt;/marquee&gt;
+			</pre>
+			
+		</div>
+		
+
+
+	</body>
+</html>

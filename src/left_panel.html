@@ -1,0 +1,106 @@
+<!DOCTYPE html> <!-- w3 规范 -->
+<html>
+	<head>
+		<!-- 编码及：中文编码（GBK/GB2312），国际编码（utf-8） -->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">  <!-- meta 是单标签; charset 根据服务器决定 -->
+		<!-- 声明当前页面三要素 -->
+		<title>HTML 的国际化标准模板</title>  <!-- <= 31 字 -->
+		<meta name="Keywords" content="keyword,keyword,keyword"> <!-- 搜索引擎的搜索关键词 -->
+		<meta name="Description" content=""> <!-- <= 80 字 搜索引擎显示的预览文字 -->
+		
+		<!-- css/js -->
+		<style type="text/css">
+			.notbold {font-weight:normal;}
+			html{height:100%;}
+			body{
+				display:block;
+				margin:0;
+				padding:0;
+				height:100%;
+				background:#dddddd;
+				background:#333333;
+				overflow-x:auto;
+			}
+			/*body input{
+				border-radius:15px;
+				width:80%;
+				height:30px;
+				margin:10px;
+				font-size:20px;
+			}*/
+			.menu{list-style:none;width:100%;margin:0;padding:0;}
+			.menu li{width:100%;text-align:center;}
+			.menu li .not_clicked, .clicked, input[type="submit"]:hover{border:0;font-family:黑体;outline-width:0;padding-top:13%;padding-bottom:13%;width:100%;}
+			.menu li .not_clicked{background:#333333;font-size:100%;color:white;}
+			.menu li input[type="submit"]:hover, .clicked{cursor:pointer;background:#ec5520;font-size:110%;color:#ffffff;text-shadow: 0 0 5px #000000;font-weight:bold;}
+			.menu li a:link, a:visited{text-decoration:none;color:white;background:gray;display:inline-block;width:100%;padding-top:2vh;padding-bottom:2vh;}
+			.menu li a:hover, a:active{background:white;}
+		</style>
+		<script>
+			function toggle_but_state(num){
+				for(var i=1; i<=22; i++){
+					var str = document.getElementById("but"+i);
+					if(i==num){
+						console.log(num);
+						str.className="clicked";
+					}else{
+						str.className="not_clicked";
+					}
+				}
+			}
+		</script>
+
+	</head>
+	<body>
+		<ul class="menu">
+			<li><form action="../src/01_开学典礼/content.html"><input type="submit" formtarget="right_panel" value="开学典礼" class="not_clicked" id="but1" onClick="toggle_but_state('1')" /></form></li>
+			<li><form action="../src/02_HTML语法/content.html"><input type="submit" formtarget="right_panel" value="HTML语法" class="not_clicked" id="but2" onClick="toggle_but_state('2')" /></form></li>
+			<li><form action="../src/03_html标签/content.html"><input type="submit" formtarget="right_panel" value="html标签" class="not_clicked" id="but3" onClick="toggle_but_state('3')" /></form></li>
+			<li><form action="../src/hw_07_06_16-Py201606027-老夏/hw.html"><input type="submit" formtarget="right_panel" value="作业1" class="not_clicked" id="but4" onClick="toggle_but_state('4')" /></form></li>
+			<li><form action="../src/04_图片标签/content.html"><input type="submit" formtarget="right_panel" value="图片标签" class="not_clicked" id="but5" onClick="toggle_but_state('5')" /></form></li>
+			<li><form action="../src/05_列表标签/content.html"><input type="submit" formtarget="right_panel" value="列表标签" class="not_clicked" id="but6" onClick="toggle_but_state('6')" /></form></li>
+			<li><form action="../src/hw_07_08_16-Py201606027-老夏/hw.html"><input type="submit" formtarget="right_panel" value="作业2" class="not_clicked" id="but7" onClick="toggle_but_state('7')" /></form></li>
+			<li><form action="../src/06_表单元素1/content.html"><input type="submit" formtarget="right_panel" value="表单元素1" class="not_clicked" id="but8" onClick="toggle_but_state('8')" /></form></li>
+			<li><form action="../src/07_表单元素2/content.html"><input type="submit" formtarget="right_panel" value="表单元素2" class="not_clicked" id="but9" onClick="toggle_but_state('9')" /></form></li>
+			<li><form action="../src/hw_07_10_16-Py201606027-老夏/完整表单.html"><input type="submit" formtarget="right_panel" value="作业3" class="not_clicked" id="but10" onClick="toggle_but_state('10')" /></form></li>
+			<li><form action="../src/09_混合框架/content.html"><input type="submit" formtarget="right_panel" value="混合框架" class="not_clicked" id="but11" onClick="toggle_but_state('11')" /></form></li>
+			<li><form action="../src/10_css基础/content.html"><input type="submit" formtarget="right_panel" value="CSS基础语法" class="not_clicked" id="but12" onClick="toggle_but_state('12')" /></form></li>
+			<li><form action="../src/11_css样式/content.html"><input type="submit" formtarget="right_panel" value="CSS样式" class="not_clicked" id="but13" onClick="toggle_but_state('13')" /></form></li>
+			<li><form action="../src/hw_07_18_16-Py201606027-老夏/mybaidu.html"><input type="submit" formtarget="right_panel" value="作业5" class="not_clicked" id="but14" onClick="toggle_but_state('14')" /></form></li>
+			<li><form action="../src/13_css样式2/content.html"><input type="submit" formtarget="right_panel" value="CSS样式2" class="not_clicked" id="but15" onclick="toggle_but_state('15')" /></form></li>
+			<li><form action="../src/14_div盒子/content.html"><input type="submit" formtarget="right_panel" value="Div盒子" class="not_clicked" id="but16" onclick="toggle_but_state('16')" /></form></li>
+			<li><form action="../src/15_定位/content.html"><input type="submit" formtarget="right_panel" value="定位" class="not_clicked" id="but17" onclick="toggle_but_state('17')" /></form></li>
+			<li><form action="../src/16_css高级/content.html"><input type="submit" formtarget="right_panel" value="CSS高级" class="not_clicked" id="but18" onclick="toggle_but_state('18')" /></form></li>
+			<li><form action="../src/about_page.html"><input type="submit" formtarget="right_panel" value="作业6，7" class="not_clicked" id="but19" onclick="toggle_but_state('19')"/></form></li>
+			<li><form action="../src/17_css高级下/content.html"><input type="submit" formtarget="right_panel" value="CSS高级 下" class="not_clicked" id="but20" onclick="toggle_but_state('20')"/></form></li>
+			<li><form action="../src/hw_07_25_27_16_Py201606027-老夏/index.html"><input type="submit" formtarget="right_panel" value="实战（静态）" class="not_clicked" id="but21" onclick="toggle_but_state('21')"/></form></li>
+			<li><form action="../src/hw_07_29_16_Py201606027-老夏/index.html"><input type="submit" formtarget="right_panel" value="实战（效果）" class="not_clicked" id="but22" onclick="toggle_but_state('22')"/></li>
+			<!--
+			<li><a href="" target="right_panel">第一节</a></li>
+			<li><a href="" target="right_panel">第二节</a></li>
+			<li><a href="" target="right_panel">第三节</a></li>
+			<li><a href="" target="right_panel">第四节</a></li>
+			<li><a href="" target="right_panel">第五节</a></li>
+			<li><a href="" target="right_panel">第六节</a></li>
+			<li><a href="" target="right_panel">第七节</a></li>
+			<li><a href="" target="right_panel">第八节</a></li>
+			<li><a href="" target="right_panel">第九节</a></li>
+			<li><a href="" target="right_panel">第十节</a></li>
+			<li><a href="" target="right_panel">其&nbsp;&nbsp;&nbsp;&nbsp;他</a></li>
+			-->
+			<!--
+			<li><input type="button" value="第一节" /></li>
+			<li><input type="button" value="第二节" /></li>
+			<li><input type="button" value="第三节" /></li>
+			<li><input type="button" value="第四节" /></li>
+			<li><input type="button" value="第五节" /></li>
+			<li><input type="button" value="第六节" /></li>
+			<li><input type="button" value="第七节" /></li>
+			<li><input type="button" value="第八节" /></li>
+			<li><input type="button" value="第九节" /></li>
+			<li><input type="button" value="第十节" /></li>
+			<li><input type="button" value="其  他"/></li>
+			-->
+		</ul>
+	</body>
+</html>

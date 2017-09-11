@@ -1,0 +1,137 @@
+<!DOCTYPE html> <!-- w3 规范 -->
+<html>
+	<head>
+		<!-- 编码及：中文编码（GBK/GB2312），国际编码（utf-8） -->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">  <!-- meta 是单标签; charset 根据服务器决定 -->
+		<!-- 声明当前页面三要素 -->
+		<title>HTML 的国际化标准模板</title>  <!-- <= 31 字 -->
+		<meta name="Keywords" content="keyword,keyword,keyword"> <!-- 搜索引擎的搜索关键词 -->
+		<meta name="Description" content=""> <!-- <= 80 字 搜索引擎显示的预览文字 -->
+		
+		<!-- css/js -->
+		<style type="text/css">
+			*{margin:0;padding:0}
+			body{font-size:15px;font-family:"微软雅黑";color:#333333;}
+			@font-face {font-family:AveFedan; src:url('../../font/AveFedan.ttf');}
+			.notbold {font-weight:normal;}
+			/*body{background:red;}*/
+			html{height: 100%;}
+			body{background:url('../../img/scandal.jpg');background-repeat:no-repeat;background-size:contain;background-position:center;position:relative;padding:2%;margin:0;height:90%;}
+			.content{background:rgba(255,255,255,0.8);border:1px solid black;border-radius:5px;padding: 10px;padding-left:20px;padding-right:20px;min-height:99%;max-height:99%;min-width:95%;max-width:95%;overflow:auto;}
+			
+			hr {clear:both; padding:.1px; margin-bottom:2%;}
+			
+			.prettyprint {white-space: pre-wrap;}
+			pre {-moz-tab-size:0; /* Firefox 4+ */-o-tab-size:0; /* Opera 11.5 & 12.1 only */tab-size:0; /* Chrome 21+, Safari 6.1+, Opera 15+ */}
+		</style>
+
+		<script>
+			var p = document.querySelector(".prettyprint");
+			p.textContent = p.textContent.replace(/^\t*/mg, "");
+		</script>
+	</head>
+	<body>
+		<div class="content">
+		
+			<pre class="prettyprint">
+				<strong>HTML标签 - Pre：</strong>
+
+				pre 元素可定义预格式化的文本. 被包围在 pre 元素中的文本通常会保留空格和换行符,而文本也会呈现为
+
+				等宽字体&lt;pre&gt; 标签的一个常见应用就是用来表示计算机的源代码: 
+
+				具体事例：
+
+				&lt;pre&gt;
+					  &amp;lt;html&amp;gt;
+					    &amp;lt;head&amp;gt;
+					    &amp;lt;/head&amp;gt;
+					    &amp;lt;body&amp;gt;
+					    &amp;lt;/body&amp;gt;
+					  &amp;lt;/html&amp;gt;
+				&lt;/pre&gt;
+			</pre>
+			
+			<hr color="grey">
+
+			<pre class="prettyprint">
+				<strong>HTML标签 - 框架：</strong>
+
+				frameset 元素可定义一个框架集。它被用来组织多个窗口（框架）。每个框架存有独立的文档。在其最简单
+
+				的应用中，frameset 元素仅仅会规定在框架集中存在多少列或多少行。您必须使用 cols 或 rows 属性
+
+				垂直框架(cols)、水平框架(rows)
+
+
+				&lt;frameset cols="25%,50%,25%"&gt;
+				  &lt;frame src="frame_a.html"&gt;
+				  &lt;frame src="frame_b.html"&gt;
+				  &lt;frame src="frame_c.html"&gt;
+				&lt;/frameset&gt;
+			</pre>
+
+			<hr color="grey">
+
+			<pre class="prettyprint">
+				<strong>HTML标签 - 混合框架结构：</strong>
+
+				&lt;frameset rows="50%,50%"&gt;
+
+				  &lt;frame src=" frame_a.html"&gt;
+
+				  &lt;frameset cols="25%,75%"&gt;
+				    &lt;frame src=" frame_b.html"&gt;
+				    &lt;frame src=" frame_c.html"&gt;
+				  &lt;/frameset&gt;
+
+				&lt;/frameset&gt;
+			</pre>
+
+			<hr color="grey">
+
+			<pre class="prettyprint">
+				<strong>HTML标签 - 导航框架</strong>
+				
+				
+				  &lt;frameset cols="120,*"&gt;
+				  
+				    &lt;frame src="html_contents.html"&gt;
+				    &lt;frame src="/frame_a.html" name="showframe"&gt;
+				  
+				  &lt;/frameset&gt;
+			</pre>
+
+			<hr color="grey">
+
+			<pre class="prettyprint">
+				<strong>HTML标签 - 内链框架：</strong>
+
+				  &lt;iframe src="/i/eg_landscape.jpg"&gt;&lt;/iframe&gt;
+                  
+				  &lt;p&gt;一些老的浏览器不支持 iframe。&lt;/p&gt;
+				  &lt;p&gt;如果得不到支持，iframe 是不可见的。&lt;/p&gt;
+			</pre>
+
+			<hr color="grey">
+			
+			<pre class="prettyprint">
+				<strong>表单 - 应用</strong>
+				
+				  &lt;1&gt; 垂直框架；
+				  
+				  &lt;2&gt; 水平框架；
+				  
+				  &lt;3&gt; 混合框架结构;
+				  
+				  &lt;4&gt; 导航框架；
+				  
+				  &lt;5&gt; 内联框架; 
+			</pre>
+			
+		</div>
+		
+
+
+	</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html> <!-- w3 规范 -->
+<html>
+	<head>
+		<!-- 编码及：中文编码（GBK/GB2312），国际编码（utf-8） -->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">  <!-- meta 是单标签; charset 根据服务器决定 -->
+		<!-- 声明当前页面三要素 -->
+		<title>作者介绍</title>  <!-- <= 31 字 -->
+		<meta name="Keywords" content="老夏"> <!-- 搜索引擎的搜索关键词 -->
+		<meta name="Description" content=""> <!-- <= 80 字 搜索引擎显示的预览文字 -->
+		
+		<!-- css/js -->
+		<style type="text/css">
+			*{margin:0;padding:0}
+			body{font-size:15px;font-family:"arial";color:#333333;background:rgba(200,180,150,0.5);}
+			.notbold {font-weight:normal;}
+			
+			h1{font-family:楷体;font-style:oblique;font-weight:bolder;color:#0e478a;font-size:50px;max-width:1000px;margin:0 auto;margin-top:40px;}
+			.about{margin:20px auto;width:1000px;height:600px;overflow:hidden;position:relative;}
+			#fake_about{width:inherit;height:inherit;position:absolute;}
+			#fake_about:after{clear:both;content:'.';display:block;width: 0;height: 0;visibility:hidden;}
+			#real_about{width:inherit;height:auto;position:absolute;}
+			#real_about p{text-indent:-3em;padding-left:3em;}
+			#real_about:after{clear:both;content:'.';display:block;width: 0;height: 0;visibility:hidden;}
+			.avatar{margin:0 30px 0 0;}
+			.clear{clear:both;}
+			.description{font-size:22px;font-weight:bold;line-height:28px;font-family:楷体;color:#20202f;color:#0e478a;}
+			.hanging_indent{text-indent:-2em;padding-left:2em;}
+			/*.show_real{height:100%;width:100%;background:rgba(250,230,200,0.5);border:0;outline:0;border:6px ;border-radius:10px;text-align:center;}
+			.show_real:hover{cursor:pointer;background:rgba(150,100,50,.5);}*/
+			.show_real{margin:15px auto;height:2em;line-height:2em;width:520px;background:rgba(100,80,190,.5);color:#909;text-decoration:none;font-weight:bold;display:block;text-align:center;border-radius:10px;font-family:楷体;font-size:20px;}
+			.show_real:hover{background:rgba(255,255,100,0.5);color:#909;}
+			.show_fake{margin:20px auto;display:block;text-align:center;}
+			
+			#real_about,#fake_about {opacity:1;transition:opacity 1s;z-index:50;}
+			.invisible{opacity:0 !important;z-index:0 !important;}
+		</style>
+		<script>
+			window.onload = function(){
+				document.getElementById("show_fake_btn").onclick = function(){
+					document.getElementById("real_about").className="invisible";
+					document.getElementById("fake_about").className="";
+				}
+				var show_real_ = document.getElementById("show_real_btn");
+				show_real_.addEventListener("click", showRealAbout);
+				function showRealAbout(){
+					document.getElementById("fake_about").className="invisible";
+					document.getElementById("real_about").className="";
+				}
+			};
+		</script>
+	</head>
+	<body>
+		<h1>作者介绍</h1>
+		<div class="about">
+			<div class="" id="fake_about">
+				<table>
+					<tr>
+						<td><img src="../img/liu_sheng_min_mu_zhai.gif" alt="" width="290" height="300" align="left" class="avatar"/></td>
+						<td>
+							<p class="hanging_indent description">鄙人<del>柳生敏木斋</del>老夏，人气动画《银魂》里的人物，柳生九兵卫的爷爷，也是九兵卫的剑术老师，是<del>柳生</del>夏家<u>历代当家最强的剑豪</u>，非常疼爱孙女。出场集数银魂九兵卫篇77、79、80、81。人物原型为日本剑圣、柳生新阴流创始人柳生石舟斋。</p><br />
+							<p class="hanging_indent description">柳生宗严，日本剑术家。名宗严，号石舟斋。家严之子，是大和的豪族，柳生新阴流之祖。畿内第一的剑豪，但败于上泉信纲的弟子疋田丰五郎，于是拜入信纲的流派。不久后领悟“无刀取”的奥秘，被授予新阴流的印可。后来，受德川家康之召，柳生家成为德川家的兵法指导。</p>
+						</td>
+					</tr>
+					<tr><td colspan="2"><a href="#" class="show_real" id="show_real_btn">不听老夏胡诌</a></td></tr>
+				</table>
+			</div>
+			<div class="invisible" id="real_about">
+				<table>
+					<tr>
+						<td style="width:320px;vertical-align:top;text-align:center;">老夏</td>
+						<td>
+							<p>完全不是什么名门之后。大发！</p><p>一岁，学会走路。</p><p>两岁，学会说话。</p><p>三岁，学会<del>打拳</del>打滚（就是躺在地上滚）。</p><p>四岁，不知道在干嘛。</p><p>五岁，喜欢上画画。</p><p>六岁，练习书法，但是失败了。。。西奈！</p><p>七岁，入小学。（这么早就没有点了么，后面还有十几年要讲呐！）</p><p>八岁，当众做了奇怪的力学试验被班主任认为是智障。。。嘛，无所谓了。</p><p>九岁，发现了气压，后被告知早在300年前，有个叫帕斯卡的人已经发现过了。妈蛋，有本事不要生那么早呀~~~</p><p>十岁，考试没做完被老师骂了一顿，回家后还被揍了。啊哈，啊哈哈哈哈哈，活该！</p><p>十一岁，进了奥数班，可是老师只喜欢前两名，妈蛋！</p><p>十二岁，被同班同学欺负。（说好不打自己人的呐？）</p><p>十三岁，领悟了时间与空间的关系，开始研究天文物理。然并卵！继续被同班同学欺负。</p><p>十四岁，还是被同班同学欺负。（果然初中的故事是说起来最方便的，一直重复就行了）</p><p>十五岁，被同班同学欺负。（今晚上就吃寿司好了）</p><p>十六岁，学乖了，先跟班干部搞好关系，再和非干部搞好关系。终于，成了班长的姐姐。</p><p>十七岁，物理老师鄙视说我思维不对。。。妈蛋，把题目出得再难一点，不要让我拿第一呀~~~</p><p>十八岁，事实证明，就是没有点也是能编的</p><p>十九岁，老师说：日后我们是要成为计算机科学家的。</p><p>二十岁，开始接受正统日本吐槽教育。</p><p>二十一岁，要成为Saitama Sensei那样的第一谋士。</p><p>二十二岁，蹲的时候用力过大，意外发现自己是有觉醒力计量表的。</p><p>二十三岁，豆沙包，豆沙包，豆沙包，豆沙包，豆沙包。</p><p>二十四岁，夜色降临后的小树林里，做见不得人的事情。一年后，室友的狗依旧没能学会卡咩咖灭哈。</p><p>二十五岁，成为了潭州人，这个得认真一点说，配文字边框，闪烁，字体变化特效（聪明的人都能看见这些特效）。</p>
+						</td>
+					</tr>
+					<tr><td colspan="2"><a href="#" class="show_fake" id="show_fake_btn">此人很懒，连背景图都没有，更不要说照片了。返回比这好看一点的介绍</a></td></tr>
+			</div>
+		</div>
+	</body>
+</html>

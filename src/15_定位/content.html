@@ -1,0 +1,98 @@
+<!DOCTYPE html> <!-- w3 规范 -->
+<html>
+	<head>
+		<!-- 编码及：中文编码（GBK/GB2312），国际编码（utf-8） -->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">  <!-- meta 是单标签; charset 根据服务器决定 -->
+		<!-- 声明当前页面三要素 -->
+		<title>HTML 的国际化标准模板</title>  <!-- <= 31 字 -->
+		<meta name="Keywords" content="keyword,keyword,keyword"> <!-- 搜索引擎的搜索关键词 -->
+		<meta name="Description" content=""> <!-- <= 80 字 搜索引擎显示的预览文字 -->
+		
+		<!-- css/js -->
+		<style type="text/css">
+			@import url("../../css/right_frame.css");
+		</style>
+	</head>
+	<body>
+		<div class="content">
+			<pre class="prettyprint">
+				<strong>定位的基本思想</strong>
+
+				  CSS(Cascading Style Sheets) 定位 (Positioning) 属性允许你对元素进行定位
+				
+				  它允许你定义元素框相对于其正常位置应该出现的位置，或者相对于父元素、另一个元素甚至浏览器窗口本身的位置。
+			</pre>
+			<hr />
+			<pre class="prettyprint">
+				<strong>一切皆为框</strong>
+				
+				  <1> 块级元素: div、h1或p元素 即：显示为一块内容称之为 “块框“ ;
+                  
+				  <2> 行内元素: span,strong,a等元素 即：内容显示在行中称 "行内框";
+                  
+				  <3> 使用display属性改变成框的类型 
+                  
+				      即：display:block; 让行内元素设置为块级元素，display:none; 没有框
+			</pre>
+			<hr />
+			<pre class="prettyprint">
+				<strong>相对定位 - relative</strong>
+				
+				  <b>相对定位：</b>如果对一个元素进行相对定位，它将出现在它所在的位置上。通过设置垂直或水平位置，让这个元素“相对于”它的起点进行移动
+                  
+				  .adv_relative {
+				    position: relative;
+				    left: 30px;
+				    top: 20px;
+				  }
+			</pre>
+			<hr />
+			<pre class="prettyprint">
+				<strong>绝对定位 - absolute</strong>
+				
+				  <b>绝对定位：</b>元素的位置相对于最近的已定位祖先元素，如果元素没有已定位的祖先元素，它的位置相对于最初的包含块。
+
+				  .adv_absolute {
+				    position: absolute;
+				    left: 30px;
+				    top: 20px;
+				  }
+			</pre>
+			<hr />
+			<pre class="prettyprint">
+				<strong>浮动</strong>
+				
+				  CSS 浮动：float 属性定义元素在哪个方向浮动，在 CSS 中，任何元素都可以浮动；
+				
+					<table class="level_1_table">
+						<thead>
+							<tr>
+								<td>值</td>
+								<td>描述</td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>left</td>
+								<td>元素向左浮动</td>
+							</tr>
+							<tr>
+								<td>right</td>
+								<td>元素向右浮动</td>
+							</tr>
+							<tr>
+								<td>none</td>
+								<td>默认值，元素不浮动，并会显示在其文本中出现的位置。</td>
+							</tr>
+						</tbody>
+					</table>
+			</pre>
+			<hr />
+			<pre class="prettyprint">
+				<strong>清除浮动</strong>
+				
+				  &lt;div style="clear:both;"&gt;&lt;/div&gt;
+			</pre>
+		</div>
+	</body>
+</html>

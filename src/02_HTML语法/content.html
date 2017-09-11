@@ -1,0 +1,141 @@
+<!DOCTYPE html> <!-- w3 规范 -->
+<html>
+	<head>
+		<!-- 编码及：中文编码（GBK/GB2312），国际编码（utf-8） -->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">  <!-- meta 是单标签; charset 根据服务器决定 -->
+		<!-- 声明当前页面三要素 -->
+		<title>HTML 的国际化标准模板</title>  <!-- <= 31 字 -->
+		<meta name="Keywords" content="keyword,keyword,keyword"> <!-- 搜索引擎的搜索关键词 -->
+		<meta name="Description" content=""> <!-- <= 80 字 搜索引擎显示的预览文字 -->
+		
+		<!-- css/js -->
+		<style type="text/css">
+			*{margin:0;padding:0}
+			body{font-size:15px;font-family:"微软雅黑";color:#333333;}
+			@font-face {font-family:AveFedan; src:url('../../font/AveFedan.ttf');}
+			.notbold {font-weight:normal;}
+			/*body{background:red;}*/
+			html{height: 100%;}
+			body{background:url('../../img/scandal.jpg');background-repeat:no-repeat;background-size:contain;background-position:center;position:relative;padding:2%;margin:0;height:90%;}
+			.content{background:rgba(255,255,255,0.8);border:1px solid black;border-radius:5px;padding: 10px;padding-left:20px;padding-right:20px;min-height:99%;max-height:99%;min-width:95%;max-width:95%;overflow:auto;}
+			
+			hr {clear:both; padding:.1px; margin-bottom:2%;}
+			
+			.prettyprint {white-space: pre-wrap;}
+			pre {-moz-tab-size:0; /* Firefox 4+ */-o-tab-size:0; /* Opera 11.5 & 12.1 only */tab-size:0; /* Chrome 21+, Safari 6.1+, Opera 15+ */}
+		</style>
+
+		<script>
+			var p = document.querySelector(".prettyprint");
+			p.textContent = p.textContent.replace(/^\t*/mg, "");
+		</script>
+	</head>
+	<body>
+		<div class="content">
+		
+			<pre class="prettyprint">
+				<strong>认识Html（Hyper text Markup Language）</strong>
+
+				   1、HTML 不是一种编程语言，而是一种标记语言 (markup language)；
+
+				   2、标记语言是由一套标记标签 (markup tag)组成
+
+				   3、HTML 使用标记标签来描述网页
+			</pre>
+			
+			<hr color="grey">
+
+			<pre class="prettyprint">
+				<strong>HTML 标签</strong>
+
+				  HTML 标记标签通常被称为 HTML 标签 (HTML tag)
+
+				（一) HTML 标签是由尖括号包围的关键词，比如 <html>
+
+				（二) HTML 标签通常是成对出现的，比如 <b> 和 </b>  <br />
+
+				（三) 标签对中的第一个标签是开始标签，第二个标签是结束标签
+
+				（四) 开始和结束标签也被称为开放标签和闭合标签
+			</pre>
+
+			<hr color="grey">
+
+			<pre class="prettyprint">
+				HTML 文档  =  网页
+
+				1. HTML 文档描述网页
+
+				2. HTML 文档包含 HTML 标签和纯文本
+
+
+				Web 浏览器的作用是读取 HTML 文档，并以网页的形式显示出它们。浏览器不会显示 HTML 标签，而是使用标签来解释页面的内容
+			</pre>
+
+			<hr color="grey">
+
+			<pre class="prettyprint">
+				<strong>Html文档结构说明</strong>
+				  1. HTML的结构包括头部（Head）、主体（Body）两大部分  
+				  2. 其中头部描述浏览器所需的信息
+				  3. 而主体则包含所要说明的具体内容。
+				
+				一个简单的Html文档(网页)  实例 .....
+			</pre>
+
+			<hr color="grey">
+
+			<pre class="prettyprint">
+				<strong>HTML &lt;!DOCTYPE&gt; 标签</strong>
+
+
+				&lt;!DOCTYPE&gt; 声明位于文档中的最前面的位置，处于 &lt;html&gt; 标签之前。此标签可告知浏览器文档使用哪种 HTML 或 XHTML 规范。
+
+				该标签可声明三种 DTD 类型，分别表示严格版本（Strict)、过渡版本（Transitional )以及基于框(Frameset）的 HTML 文档。
+
+				以下面这个 &lt;!DOCTYPE&gt; 标签为例： &lt;!DOCTYPE html &gt;
+
+				文档的根元素是 html，它在公共标识符被定义为 "-//W3C//DTD XHTML 1.0 Strict//EN" 的 DTD 中进行了定义。浏览器将明白如
+
+				何寻找匹配此公共标识符的 DTD。如果找不到，浏览器将使用公共标识符后面的 URL 作为寻找 DTD 的位置。
+			</pre>
+
+			<hr color="grey">
+			
+			<pre class="prettyprint">
+				<strong>常用简单标签讲解:</strong>
+				  
+				  <strong>HTML 标题</strong>
+				  HTML标题 (Heading) 是通过 &lt;h1&gt; - &lt;h6&gt; 等标签进行定义的。
+				  
+				  <b>实例：</b>
+				    &lt;h1&gt;This is a heading&lt;/h1&gt;
+				    &lt;h1&gt;This is a heading&lt;/h1&gt;
+				    &lt;h1&gt;This is a heading&lt;/h1&gt;
+				  
+				  <strong></strong>
+				  HTML 段落是通过 &lt;p&gt; 标签进行定义的。
+				  
+				  <b>实例：</b>
+				    &lt;p&gt;This is a paragraph&lt;/p&gt;
+				    &lt;p&gt;This is another paragraph&lt;/p&gt;
+			</pre>
+			
+			<hr color="grey">
+
+			<pre class="prettyprint">
+				<strong>JavaWeb开发工具</strong>
+				
+				基础学习工具：Editplus3
+
+				正式开发工具：DreamWeaver 
+
+				浏览器：Firefox 火狐浏览器，google浏览器，IETEST，Opera
+			</pre>
+			
+		</div>
+		
+
+
+	</body>
+</html>

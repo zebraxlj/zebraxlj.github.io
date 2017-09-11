@@ -1,0 +1,70 @@
+<!DOCTYPE html> <!-- w3 规范 -->
+<html>
+	<head>
+		<!-- 编码及：中文编码（GBK/GB2312），国际编码（utf-8） -->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">  <!-- meta 是单标签; charset 根据服务器决定 -->
+		<!-- 声明当前页面三要素 -->
+		<title>HTML 的国际化标准模板</title>  <!-- <= 31 字 -->
+		<meta name="Keywords" content="keyword,keyword,keyword"> <!-- 搜索引擎的搜索关键词 -->
+		<meta name="Description" content=""> <!-- <= 80 字 搜索引擎显示的预览文字 -->
+		
+		<!-- css/js -->
+		<style type="text/css">
+			@font-face {font-family:LeviBrush; src:url('../font/LEVIBRUSH.TTF');}
+			:root{
+				--my_red:#e20001;
+				--my_orange:#f1ab0d;
+				--my_green:#61ff16;
+				--my_blue:#0977e8;
+				--my_purple:#7b01ea;
+			}
+			.notbold {font-weight:normal;}
+			/*body{
+				background:url('../img/bg_computer.png');
+				background-repeat:no-repeat;
+				background-position:right top; 
+				background-position:0% 20%;
+			}*/
+			html{height:100%;}
+			body{
+				margin:0;
+				height:100%;
+				position:relative;
+				display:inline-block;
+				overflow:hidden;
+			}
+			.logo{
+				height:100%;
+				margin-left:3vw;
+				margin-right:2vw;
+				padding-bottom:1vw;
+				float:left;
+			}
+			.title{
+				position:absolute;
+				top:30%;
+				left:130%;
+				margin:0;
+				
+				/*font-size:30px;*/
+				font-size:50vh;
+				font-family:LeviBrush;
+				white-space:nowrap;
+				text-overflow:ellipsis;
+			}
+			.title re{color:var(--my_red);}
+			.title or{color:var(--my_orange);}
+			.title gr{color:var(--my_green);}
+			.title bl{color:var(--my_blue);}
+			.title pu{color:var(--my_purple);}
+		</style>
+	</head>
+	<body>
+		<a href="../src/right_panel.html" target="right_panel" style="height:100%; display:block;"><img src="../img/shoujo_s_logo1.png" class="logo" align="center"/></a>
+		<p class="title"><b>SAMSON'S HOMEWORK <re>CO</re><or>LL</or><gr>EC</gr><bl>TI</bl><pu>ON</pu></b></p>
+		<!--
+		<p class="title"><b><re>SAMSON</re>'<or>S</or> <bl>HO</bl><or>ME</or><pu>WO</pu><gr>RK</gr> <re>CO</re><or>LL</or><gr>EC</gr><bl>TI</bl><pu>ON</pu></b></p>
+		<p class="title"><b>SAMSON'S H<re>O</re>MEW<or>O</or>RK C<gr>O</gr>LLE<bl>C</bl>TI<pu>O</pu>N</b></p>
+		-->
+	</body>
+</html>

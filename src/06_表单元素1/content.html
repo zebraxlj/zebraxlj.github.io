@@ -1,0 +1,135 @@
+<!DOCTYPE html> <!-- w3 规范 -->
+<html>
+	<head>
+		<!-- 编码及：中文编码（GBK/GB2312），国际编码（utf-8） -->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">  <!-- meta 是单标签; charset 根据服务器决定 -->
+		<!-- 声明当前页面三要素 -->
+		<title>HTML 的国际化标准模板</title>  <!-- <= 31 字 -->
+		<meta name="Keywords" content="keyword,keyword,keyword"> <!-- 搜索引擎的搜索关键词 -->
+		<meta name="Description" content=""> <!-- <= 80 字 搜索引擎显示的预览文字 -->
+		
+		<!-- css/js -->
+		<style type="text/css">
+			*{margin:0;padding:0}
+			body{font-size:15px;font-family:"微软雅黑";color:#333333;}
+			@font-face {font-family:AveFedan; src:url('../../font/AveFedan.ttf');}
+			.notbold {font-weight:normal;}
+			/*body{background:red;}*/
+			html{height: 100%;}
+			body{background:url('../../img/scandal.jpg');background-repeat:no-repeat;background-size:contain;background-position:center;position:relative;padding:2%;margin:0;height:90%;}
+			.content{background:rgba(255,255,255,0.8);border:1px solid black;border-radius:5px;padding: 10px;padding-left:20px;padding-right:20px;min-height:99%;max-height:99%;min-width:95%;max-width:95%;overflow:auto;}
+			
+			hr {clear:both; padding:.1px; margin-bottom:2%;}
+			
+			.prettyprint {white-space: pre-wrap;}
+			pre {-moz-tab-size:0; /* Firefox 4+ */-o-tab-size:0; /* Opera 11.5 & 12.1 only */tab-size:0; /* Chrome 21+, Safari 6.1+, Opera 15+ */}
+		</style>
+
+		<script>
+			var p = document.querySelector(".prettyprint");
+			p.textContent = p.textContent.replace(/^\t*/mg, "");
+		</script>
+	</head>
+	<body>
+		<div class="content">
+		
+			<pre class="prettyprint">
+				<strong>HTML标签 - 表单：</strong>
+
+				  表单是一个包含表单元素的区域。
+                  
+				  表单元素是允许用户在表单中（比如：文本域、下拉列表、单选框、复选框等等）输入信息的元素
+                  
+				  表单使用表单标签（&lt;form&gt;）定义
+                  
+                  
+				  具体事例：
+                  
+				  &lt;form&gt;
+				    input 元素 （多数情况下被用到的表单标签是输入标签，输入类型是由类型属性（type）定义的）
+				  &lt;/form&gt;
+			</pre>
+			
+			<hr color="grey">
+
+			<pre class="prettyprint">
+				<strong>HTML标签 - 文本域：</strong>
+
+				  当用户要在表单中键入字母、数字等内容时，就会用到文本域。
+                  
+				  &lt;form&gt;
+				    username: &lt;input type="text" name="username" /&gt;&lt;br /&gt;
+				    userpass: &lt;input type="password" name="pass"&gt;&lt;br /&gt;
+				    &lt;textarea cols="2" rows="3"&gt;&lt;/textarea&gt;
+				  &lt;/form&gt;
+			</pre>
+
+			<hr color="grey">
+
+			<pre class="prettyprint">
+				<strong>HTML标签 - 单选按钮：</strong>
+
+				  当用户从若干给定的的选择中选取其一时，就会用到单选框。
+                  
+				  注： name="自定义名称" 必须相同 
+                  
+				  &lt;form&gt;
+				    &lt;input type="radio" name="sex" value="男" /&gt; 男&lt;br /&gt;
+				    &lt;input type="radio" name="sex" value="女" /&gt; 女
+				  &lt;/form&gt;
+			</pre>
+
+			<hr color="grey">
+
+			<pre class="prettyprint">
+				<strong>HTML标签 - 复选框</strong>
+				
+				  当用户需要从若干给定的选择中选取一个或若干选项时，就会用到复选框。
+				  
+				  &lt;form&gt;
+				    &lt;input type="checkbox" name="" /&gt;篮球
+				    &lt;input type="checkbox" name="" /&gt;乒乓球
+				  &lt;/form&gt;
+			</pre>
+
+			<hr color="grey">
+
+			<pre class="prettyprint">
+				<strong>HTML标签 - Action和确认按钮：</strong>
+
+				  当用户单击确认按钮时，表单的内容会被传送到另一个文件。表单的动作属性定义了目的文件的文件名。
+                  
+				  由动作属性定义的这个文件通常会对接收到的输入数据进行相关的处理。
+                  
+				  &lt;form action="html.do" method="get"&gt;
+                  
+				    username:  &lt;input type="text" name="user" /&gt;
+                       
+				    &lt;input type="submit" value="提  交" /&gt;
+                  
+				  &lt;/form&gt;
+			</pre>
+
+			<hr color="grey">
+			
+			<pre class="prettyprint">
+				<strong>表单 - 应用</strong>
+
+				  &lt;1&gt; 文本域；
+                  
+				  &lt;2&gt; 多行文本表单；
+                  
+				  &lt;3&gt; 单选按扭;
+                  
+				  &lt;4&gt; 多选按扭；
+                  
+				  &lt;5&gt; 下拉列表;
+                  
+				  &lt;6&gt; 按钮标签
+			</pre>
+		</div>
+		
+
+
+	</body>
+</html>

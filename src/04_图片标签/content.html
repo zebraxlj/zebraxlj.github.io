@@ -1,0 +1,127 @@
+<!DOCTYPE html> <!-- w3 规范 -->
+<html>
+	<head>
+		<!-- 编码及：中文编码（GBK/GB2312），国际编码（utf-8） -->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">  <!-- meta 是单标签; charset 根据服务器决定 -->
+		<!-- 声明当前页面三要素 -->
+		<title>HTML 的国际化标准模板</title>  <!-- <= 31 字 -->
+		<meta name="Keywords" content="keyword,keyword,keyword"> <!-- 搜索引擎的搜索关键词 -->
+		<meta name="Description" content=""> <!-- <= 80 字 搜索引擎显示的预览文字 -->
+		
+		<!-- css/js -->
+		<style type="text/css">
+			*{margin:0;padding:0}
+			body{font-size:15px;font-family:"微软雅黑";color:#333333;}
+			@font-face {font-family:AveFedan; src:url('../../font/AveFedan.ttf');}
+			.notbold {font-weight:normal;}
+			/*body{background:red;}*/
+			html{height: 100%;}
+			body{background:url('../../img/scandal.jpg');background-repeat:no-repeat;background-size:contain;background-position:center;position:relative;padding:2%;margin:0;height:90%;}
+			.content{background:rgba(255,255,255,0.8);border:1px solid black;border-radius:5px;padding: 10px;padding-left:20px;padding-right:20px;min-height:99%;max-height:99%;min-width:95%;max-width:95%;overflow:auto;}
+			
+			hr {clear:both; padding:.1px; margin-bottom:2%;}
+			
+			.prettyprint {white-space: pre-wrap;}
+			pre {-moz-tab-size:0; /* Firefox 4+ */-o-tab-size:0; /* Opera 11.5 & 12.1 only */tab-size:0; /* Chrome 21+, Safari 6.1+, Opera 15+ */}
+		</style>
+		<script>
+			var p = document.querySelector(".prettyprint");
+			p.textContent = p.textContent.replace(/^\t*/mg, "");
+		</script>
+	</head>
+	<body>
+		<div class="content">
+		
+			<pre class="prettyprint">
+				<strong>img 元素向网页中嵌入一幅图像（技术上：是从网页上链接图像）</strong>
+
+				  &lt;1&gt; 常见图片格式 ;
+
+				  &lt;2&gt; 路径知识 (绝对路径、相对路径)
+
+				  &lt;3&gt; 链接；
+			</pre>
+			
+			<hr color="grey">
+
+			<pre class="prettyprint">
+				<strong>常见的图片格式</strong>
+				
+				  &lt;1&gt; .jpg 
+                  
+				  &lt;2&gt; .gif (Graphics Interchange Format)的原义是“图像互换格式”
+                  
+				  特点一：支持无损耗压缩和透明度；
+                  
+				  特点二：在一个GIF文件中可以存多幅彩色图像，如果把存于一个文件中的多幅图像数据逐幅读出并
+				  			  
+				  显示到屏幕上，就可构成一种最简单的动画，易于使用许多 GIF 动画程序创建。
+                  
+				  缺点：详细的图片和写实摄影图像会丢失颜色信息
+                  
+				  &lt;3&gt; .png　
+                  
+				  优点：PNG 支持高级别无损耗压缩（支持透明度，）；
+                  
+				  缺点：ＩＥ６不支持透明
+			</pre>
+
+			<hr color="grey">
+
+			<pre class="prettyprint">
+				<strong>HTML标签 - 路径知识</strong>
+				
+				  &lt;1&gt; HTML相对路径(Relative Path)
+                  
+				  同一个目录的文件引用：如果源文件和引用文件在同一个目录里，直接写引用文件名即可，
+                  
+				  这时引用文件的方式就是使用相对路径。
+                  
+                  
+				  &lt;2&gt; HTML绝对路径(Absolute Path)
+                  
+				  完整的描述文件位置的路径就 是绝对路径不需要知道其他任何信息就可以根据绝对路径判断出文件的位置；
+			</pre>
+
+			<hr color="grey">
+			
+			<pre class="prettyprint">
+				<strong>img标签（img 元素向网页中嵌入一幅图像）：</strong>
+
+				  
+				  &lt;１&gt;　并不会在网页中插入图像，而是从网页上链接图像。
+				  
+				  &lt;２&gt;　标签创建的是被引用图像的占位空间。
+
+
+				<b>图片的四要素：</b>
+
+				  src　,　alt　,　width　,　height
+                  
+				  属性：id, class, title, style
+			</pre>
+			
+			<hr color="grey">
+
+			<pre class="prettyprint">
+			<strong> HTML标签 - img图片的应用</strong>
+			
+			  &lt;1&gt; 插入不同格式的图片;
+              
+			  &lt;2&gt; 从不同的位置插入图片;
+              
+			  &lt;3&gt; 背景图片;
+              
+			  &lt;4&gt; 排列图片（align="bottom / middle / top"）;
+              
+			  &lt;5&gt; 浮动图像（带有图像的一个段落，图像的 align 属性设置为 "left"图像将浮动到文本的左侧）;
+              
+			  &lt;6&gt; 图片连接；
+			</pre>
+
+		</div>
+		
+
+
+	</body>
+</html>

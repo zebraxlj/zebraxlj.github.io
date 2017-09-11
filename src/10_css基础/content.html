@@ -1,0 +1,162 @@
+<!DOCTYPE html> <!-- w3 规范 -->
+<html>
+	<head>
+		<!-- 编码及：中文编码（GBK/GB2312），国际编码（utf-8） -->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">  <!-- meta 是单标签; charset 根据服务器决定 -->
+		<!-- 声明当前页面三要素 -->
+		<title>HTML 的国际化标准模板</title>  <!-- <= 31 字 -->
+		<meta name="Keywords" content="keyword,keyword,keyword"> <!-- 搜索引擎的搜索关键词 -->
+		<meta name="Description" content=""> <!-- <= 80 字 搜索引擎显示的预览文字 -->
+		
+		<!-- css/js -->
+		<style type="text/css">
+			*{margin:0;padding:0}
+			body{font-size:15px;font-family:"微软雅黑";color:#333333;}
+			@font-face {font-family:AveFedan; src:url('../../font/AveFedan.ttf');}
+			.notbold {font-weight:normal;}
+			/*body{background:red;}*/
+			html{height: 100%;}
+			body{background:url('../../img/scandal.jpg');background-repeat:no-repeat;background-size:contain;background-position:center;position:relative;padding:2%;margin:0;height:90%;}
+			.content{background:rgba(255,255,255,0.8);border:1px solid black;border-radius:5px;padding: 10px;padding-left:20px;padding-right:20px;min-height:99%;max-height:99%;min-width:95%;max-width:95%;overflow:auto;}
+			
+			hr {clear:both;margin-bottom:2%;border:0;border-top:1px solid silver;}
+			
+			.prettyprint {white-space: pre-wrap;}
+			pre {-moz-tab-size:0; /* Firefox 4+ */-o-tab-size:0; /* Opera 11.5 & 12.1 only */tab-size:0; /* Chrome 21+, Safari 6.1+, Opera 15+ */}
+		</style>
+
+		<script>
+			var p = document.querySelector(".prettyprint");
+			p.textContent = p.textContent.replace(/^\t*/mg, "");
+		</script>
+	</head>
+	<body>
+		<div class="content">
+		
+			<pre class="prettyprint">
+				<strong>CSS 层叠样式表 (Cascading Style Sheets)</strong>
+				
+				  CSS 规则由两个主要的部分构成：选择器，以及一条或多条声明
+				  
+				  选择器:  通常是您需要改变样式的HTML元素
+				         属性   值    属性  值     属性  值    属性     值
+				          |     |     |    |       |    |      |       |
+				    h1 {<u>width:300px</u>;<u>height:100px</u>;<u>color:red</u>;<u>font-size:14px;</u>}
+				    |        |            |           |             |
+				  选择器    声明          声明        声明         声明 
+			</pre>
+			
+			<hr color="grey">
+
+			<pre class="prettyprint">
+				<strong>css 值的不同写法和单位</strong>
+				  除了英文单词 red，还可以使用十六进制的颜色值 #ff0000
+				  
+				  <1> 十六进制颜色值：
+				    p { color: #ff0000; }
+				  
+				  <2> 为了节约字节，我们可以使用 CSS 的缩写形式
+				    p { color: #f00 }
+				  
+				  <3> 英文单词 red:
+				    p { color: red; }
+			</pre>
+			<hr color="grey">
+
+			<pre class="prettyprint">
+				<strong>css样式 - 空格和大小写</strong>
+				
+				大多数样式表包含不止一条规则，而大多数规则包含不止一个声明
+
+				  body {
+				    color:  #000;
+				    background: #fff;
+				    margin: 0;
+				    padding: 0;
+				    font-family: 微软雅黑, Palatino, serif;
+				  }
+			</pre>
+			<hr color="grey">
+
+			<pre class="prettyprint">
+				<strong>选择器的分组</strong>
+				
+				  对选择器进行分组，用逗号将需要分组的选择器分开
+
+				  h1,h2,h3,h4,h5,h6 {
+				    color : green;
+				  }
+			</pre>
+			<hr color="grey">
+
+			<pre class="prettyprint">
+				<strong>CSS注释语法</strong>
+				
+				  CSS注释的开始使用/* , 结束使用*/
+
+				  /* 注释内容 */
+				  
+				  /* 文章标题注释 */
+				  h1{color:red;font-size:12px;}
+			</pre>
+			<hr color="grey">
+			
+			<pre class="prettyprint">
+				<strong>CSS 类选择器</strong>
+				
+				  在 CSS 中，类选择器以一个点号显示
+                  
+				    .center {text-align: center}
+				    .str{color:red;font-size:12px;}
+                  
+				  h1 和 p 元素都有 center 类。这意味着两者都将遵守 ".center" 选择器中的规则
+                  
+				    &lt;h1 class="center"&gt;文章的标题&lt;/h1&gt;
+				    &lt;p class="center"&gt;这是段落的标签&lt;/p&gt;
+
+			</pre>
+			<hr color="grey">
+			<pre class="prettyprint">
+				<strong>id 选择器</strong>
+				
+				  id 选择器可以为标有特定 id 的 HTML 元素指定特定的样式
+                  
+				  id 选择器以 "<b>#</b>" 来定义
+				    例：两个 id 选择器
+				       &lt;p id="red"&gt;这个段落是红色。&lt;/p&gt;
+				       &lt;p id="green"&gt;这个段落是绿色。&lt;/p&gt;
+                  
+				  <b>注意：</b> id 属性在每个 HTML 文档中<u>只能出现一次</u>。
+                  
+				<b>id 选择器和派生选择器</b>
+                  
+				  在现代布局中，id 选择器常常用于建立派生选择器
+
+			</pre>
+			<hr color="grey">
+			<pre class="prettyprint">
+				<strong>外部引入到样式</strong>
+				
+				  从外部引入到样式分为两种：（注意写在head标签里面）  
+                  
+				    Link样式表式：  &lt;link rel=”stylesheet” type=”text/css” href=”my.css”(href表示路径)&gt;   
+                    
+				    Html式：  &lt;style type="text/css"&gt;@import url("css.css");&lt;/style&gt;
+			</pre>
+			<hr color="grey">
+			<pre class="prettyprint">
+				<strong>行内样式</strong>
+				
+				  &lt;!--以style="css样式"--&gt;
+
+				  &lt;div style="color:red;font-size:12px;"&gt;&lt;/div&gt;
+
+				  &lt;div style="color:red;font-size:12px;"&gt;&lt;/div&gt;
+			</pre>
+			
+		</div>
+		
+
+
+	</body>
+</html>
